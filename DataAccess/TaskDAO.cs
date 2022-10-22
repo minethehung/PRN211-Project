@@ -41,13 +41,20 @@ namespace DataAccess {
                             TaskId = dataReader.GetInt32("task_id"),
                             Title = dataReader.GetString("title"),
                             Description = dataReader.GetString("description"),
-                            
+                            DueDate = dataReader.GetDateTime("due_date"),
+                            CategoryId = dataReader.GetInt32("category_id"),
+                            RepeatId = dataReader.GetInt32("repeat_id"),
+                            Remind = dataReader.GetDateTime("remind_time"),
+                            StartDate = dataReader.GetDateTime("start_date"),
+                            GroupId = dataReader.GetInt32("group_id"),
+                            Username = dataReader.GetString("username"),
+                            State = dataReader.GetString("state")
                         });
                     }
                 }
             }
             catch (Exception ex) {
-
+                throw new Exception(ex.Message);
             }
             finally {
                 connection.Close();
