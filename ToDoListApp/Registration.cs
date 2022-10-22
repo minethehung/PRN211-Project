@@ -26,7 +26,7 @@ namespace ToDoWinApp
             try
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+                openFileDialog.Filter = "Files|*.jpg;*.jpeg;*.png;...";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
 
@@ -91,7 +91,23 @@ namespace ToDoWinApp
                 user.Password = txtPassword.Text;
                 user.ImagePath = pBImage.ImageLocation.ToString();
                 userRepository.InsertNewUser(user);
+                this.Close();
             }
+        }
+
+        private void Registration_Load(object sender, EventArgs e)
+        {
+            txtUsername.TabIndex = 0;
+            txtPassword.TabIndex = 1;
+            txtConfirm.TabIndex = 2;
+            txtName.TabIndex = 3;
+            dateTimeBirthDay.TabIndex = 4;
+            btnAddImg.TabIndex = 5;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
