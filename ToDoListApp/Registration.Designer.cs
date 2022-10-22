@@ -36,12 +36,13 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.txtConfirm = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimeBirthDay = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.pBImage = new System.Windows.Forms.PictureBox();
+            this.btnAddImg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,21 +118,22 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Registration";
             // 
-            // btnSubmit
+            // btnRegister
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(292, 409);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(226, 29);
-            this.btnSubmit.TabIndex = 9;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnRegister.Location = new System.Drawing.Point(292, 409);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(226, 29);
+            this.btnRegister.TabIndex = 9;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // textBox1
+            // txtConfirm
             // 
-            this.textBox1.Location = new System.Drawing.Point(292, 219);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 27);
-            this.textBox1.TabIndex = 11;
+            this.txtConfirm.Location = new System.Drawing.Point(292, 219);
+            this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.Size = new System.Drawing.Size(308, 27);
+            this.txtConfirm.TabIndex = 11;
             // 
             // label6
             // 
@@ -139,9 +141,9 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(84, 215);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 31);
+            this.label6.Size = new System.Drawing.Size(106, 31);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Password Confirm: ";
+            this.label6.Text = "Confirm: ";
             // 
             // dateTimeBirthDay
             // 
@@ -149,6 +151,7 @@
             this.dateTimeBirthDay.Name = "dateTimeBirthDay";
             this.dateTimeBirthDay.Size = new System.Drawing.Size(308, 27);
             this.dateTimeBirthDay.TabIndex = 12;
+            this.dateTimeBirthDay.ValueChanged += new System.EventHandler(this.dateTimeBirthDay_ValueChanged);
             // 
             // label7
             // 
@@ -156,29 +159,41 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(84, 341);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(153, 31);
+            this.label7.Size = new System.Drawing.Size(85, 31);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Image Cover: ";
+            this.label7.Text = "Avatar:";
             // 
             // pBImage
             // 
-            this.pBImage.Location = new System.Drawing.Point(292, 335);
+            this.pBImage.Location = new System.Drawing.Point(475, 335);
             this.pBImage.Name = "pBImage";
             this.pBImage.Size = new System.Drawing.Size(125, 62);
+            this.pBImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBImage.TabIndex = 14;
             this.pBImage.TabStop = false;
+            // 
+            // btnAddImg
+            // 
+            this.btnAddImg.Location = new System.Drawing.Point(292, 346);
+            this.btnAddImg.Name = "btnAddImg";
+            this.btnAddImg.Size = new System.Drawing.Size(94, 29);
+            this.btnAddImg.TabIndex = 15;
+            this.btnAddImg.Text = "Add";
+            this.btnAddImg.UseVisualStyleBackColor = true;
+            this.btnAddImg.Click += new System.EventHandler(this.btnAddImg_Click);
             // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.btnAddImg);
             this.Controls.Add(this.pBImage);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimeBirthDay);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtPassword);
@@ -206,11 +221,12 @@
         private TextBox txtPassword;
         private TextBox txtName;
         private Label label5;
-        private Button btnSubmit;
-        private TextBox textBox1;
+        private Button btnRegister;
+        private TextBox txtConfirm;
         private Label label6;
         private DateTimePicker dateTimeBirthDay;
         private Label label7;
         private PictureBox pBImage;
+        private Button btnAddImg;
     }
 }

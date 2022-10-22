@@ -14,6 +14,7 @@ namespace Group9_Project
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Registration());
+
         }
     }
 }
