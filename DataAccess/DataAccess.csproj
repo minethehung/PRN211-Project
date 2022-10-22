@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Appsetting.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
