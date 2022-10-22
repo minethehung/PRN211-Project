@@ -29,10 +29,12 @@ namespace Group9_Project
                 Username = "admin"
             };
             LoadData();
+           
         }
         private void SetDataSource(BindingSource source) {
             taskList.DataSource = null;
             taskList.DataSource = source;
+            taskList.Columns[0].Visible = false;
         }
         private void LoadData() {
             try {
@@ -62,11 +64,57 @@ namespace Group9_Project
             Create frmCreate = new Create();
             this.Hide();
             frmCreate.ShowDialog();
+            this.Show();
+            LoadData();
 
         }
 
         private void btnExit_Click(object sender, EventArgs e) {
             Close();
+        }
+
+        private void btnImportant_Click(object sender, EventArgs e) {
+            try {
+                List<TaskObject> tasks = taskRepository.GetAllTaskOfUser(this.User.Username);
+                List<dynamic> data = new List<dynamic>();
+                foreach (TaskObject task in tasks) {
+                    if (task.CategoryId == 1) {
+                        data.Add(new {
+                            TaskId = task.TaskId,
+                            Title = task.Title,
+                            DueDate = task.DueDate,
+                            Importance = task.CategoryId,
+                            Status = task.State
+                        });
+                    }
+                }
+                if (data.Count > 0) {
+                    source = null;
+                    source = new BindingSource();
+                    source.DataSource = data;
+                    SetDataSource(source);
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Show important task", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnView_Click(object sender, EventArgs e) {
+            try {
+                //taskList.SelectedCells[0].Value.ToString();
+                Detail frmDetail = new Detail();
+                this.Hide();
+                frmDetail.ShowDialog();
+                this.Show();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "View task in detail", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e) {
+            Application.Restart();
         }
     }
 }

@@ -56,7 +56,7 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Location = new System.Drawing.Point(525, 194);
+            this.groupBox1.Location = new System.Drawing.Point(858, 194);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(275, 174);
             this.groupBox1.TabIndex = 44;
@@ -107,7 +107,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(525, 409);
+            this.btnExit.Location = new System.Drawing.Point(858, 409);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(275, 29);
             this.btnExit.TabIndex = 43;
@@ -117,34 +117,37 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(525, 374);
+            this.btnLogout.Location = new System.Drawing.Point(858, 374);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(275, 29);
             this.btnLogout.TabIndex = 42;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnImportant
             // 
-            this.btnImportant.Location = new System.Drawing.Point(525, 159);
+            this.btnImportant.Location = new System.Drawing.Point(858, 159);
             this.btnImportant.Name = "btnImportant";
             this.btnImportant.Size = new System.Drawing.Size(275, 29);
             this.btnImportant.TabIndex = 41;
             this.btnImportant.Text = "Important";
             this.btnImportant.UseVisualStyleBackColor = true;
+            this.btnImportant.Click += new System.EventHandler(this.btnImportant_Click);
             // 
             // btnView
             // 
-            this.btnView.Location = new System.Drawing.Point(525, 124);
+            this.btnView.Location = new System.Drawing.Point(858, 124);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(275, 29);
             this.btnView.TabIndex = 40;
             this.btnView.Text = "View";
             this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(525, 89);
+            this.btnCreate.Location = new System.Drawing.Point(858, 89);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(275, 29);
             this.btnCreate.TabIndex = 39;
@@ -156,11 +159,12 @@
             // 
             this.taskList.BackgroundColor = System.Drawing.Color.White;
             this.taskList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.taskList.Location = new System.Drawing.Point(12, 89);
+            this.taskList.Location = new System.Drawing.Point(0, 89);
             this.taskList.Name = "taskList";
             this.taskList.RowHeadersWidth = 51;
             this.taskList.RowTemplate.Height = 29;
-            this.taskList.Size = new System.Drawing.Size(488, 349);
+            this.taskList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.taskList.Size = new System.Drawing.Size(840, 358);
             this.taskList.TabIndex = 38;
             // 
             // label3
@@ -208,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 505);
+            this.ClientSize = new System.Drawing.Size(1145, 546);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogout);
@@ -221,8 +225,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
