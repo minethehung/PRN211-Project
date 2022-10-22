@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoWinApp", "..\Group9_Project\Group9_Project\ToDoWinApp.csproj", "{98F46BDE-D9C1-4980-BEB4-A06BC7DB15A2}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{4A30E506-BCE0-4A6F-9AAA-FA6F7A9AC907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{ED7AE48A-4B15-43AB-8D3E-F8A5822E559D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{ED7AE48A-4B15-43AB-8D3E-F8A5822E559D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListApp", "ToDoListApp\ToDoListApp.csproj", "{15AFEBD2-EC6F-4D65-ACF2-3E6EB9ECC008}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{98F46BDE-D9C1-4980-BEB4-A06BC7DB15A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98F46BDE-D9C1-4980-BEB4-A06BC7DB15A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98F46BDE-D9C1-4980-BEB4-A06BC7DB15A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98F46BDE-D9C1-4980-BEB4-A06BC7DB15A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A30E506-BCE0-4A6F-9AAA-FA6F7A9AC907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A30E506-BCE0-4A6F-9AAA-FA6F7A9AC907}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A30E506-BCE0-4A6F-9AAA-FA6F7A9AC907}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{ED7AE48A-4B15-43AB-8D3E-F8A5822E559D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED7AE48A-4B15-43AB-8D3E-F8A5822E559D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED7AE48A-4B15-43AB-8D3E-F8A5822E559D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15AFEBD2-EC6F-4D65-ACF2-3E6EB9ECC008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15AFEBD2-EC6F-4D65-ACF2-3E6EB9ECC008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15AFEBD2-EC6F-4D65-ACF2-3E6EB9ECC008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15AFEBD2-EC6F-4D65-ACF2-3E6EB9ECC008}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
