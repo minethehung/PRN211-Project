@@ -103,6 +103,8 @@ namespace ToDoWinApp
             txtName.TabIndex = 3;
             dateTimeBirthDay.TabIndex = 4;
             btnAddImg.TabIndex = 5;
+            txtPassword.PasswordChar = '*';
+            txtConfirm.PasswordChar = '*';
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -16,11 +16,6 @@ namespace Group9_Project
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Registration frmRegistration = new Registration();
@@ -41,13 +36,14 @@ namespace Group9_Project
             if (user == null || user.Password != password)
             {
                 MessageBox.Show("Username or password is incorrect!", "Notice", MessageBoxButtons.OK);
-
             }
             else
             {
-                Home frmHome = new Home { User = user };
-                frmHome.Show();
+                Home frmHome = new Home() { User = user };
                 this.Hide();
+                frmHome.ShowDialog();
+                Close();
+
             }
 
         }
@@ -56,6 +52,13 @@ namespace Group9_Project
         {
             txtUsername.TabIndex = 0;
             txtPassword.TabIndex = 1;
+            txtPassword.PasswordChar = '*';
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            
+           
         }
     }
 }
