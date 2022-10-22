@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "Todolist": "Server=(local); uid=sa;pwd=12345;database=ToDoList;TrustServerCertificate=true;"
+  }
+}
