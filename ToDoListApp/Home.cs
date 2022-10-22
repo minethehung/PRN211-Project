@@ -35,6 +35,13 @@ namespace Group9_Project
             taskList.DataSource = null;
             taskList.DataSource = source;
             taskList.Columns[0].Visible = false;
+            string status = taskList.SelectedCells[4].Value.ToString();
+            if (status == "Complete") {
+                btnDone.Text = "To doing";
+            }
+            else {
+                btnDone.Text = "Done";
+            }
         }
         private void LoadData() {
             try {
@@ -115,6 +122,36 @@ namespace Group9_Project
 
         private void btnLogout_Click(object sender, EventArgs e) {
             Application.Restart();
+        }
+
+        private void taskList_CellClick(object sender, DataGridViewCellEventArgs e) {
+            string status = taskList.SelectedCells[4].Value.ToString();
+            if (status == "Complete") {
+                btnDone.Text = "To doing";
+            }
+            else {
+                btnDone.Text = "Done";
+            }
+        }
+
+        private void btnDone_Click(object sender, EventArgs e) {
+            try {
+                int id = int.Parse(taskList.SelectedCells[0].Value.ToString());
+                if (btnDone.Text.Equals("To doing")) {
+                    taskRepository.UpdateTaskState(id, "Incomplete");
+                }else {
+                    taskRepository.UpdateTaskState(id, "Complete");
+                }
+                LoadData();
+                for (int i = 0; i < taskList.Rows.Count; i++) {
+                    if (int.Parse(taskList.Rows[i].Cells[0].Value.ToString()) == id) {
+                        taskList.Rows[i].Selected = true;
+                    }
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Chang task status", MessageBoxButtons.OK);
+            }
         }
     }
 }

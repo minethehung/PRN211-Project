@@ -10,6 +10,7 @@ namespace DataAccess.Repository
     public interface ITaskRepository
     {
         List<TaskObject> GetAllTaskOfUser(string username);
+        public void UpdateTaskState(int id, string status);
         TaskObject GetTaskByTaskId(int taskId);
         void InsertTask(TaskObject task);
         void UpdateTask(TaskObject task);

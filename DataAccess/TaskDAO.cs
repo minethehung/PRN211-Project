@@ -31,7 +31,7 @@ namespace DataAccess {
             try {
                 connection = DbHelper.getConnection();
                 connection.Open();
-                string SQLSelect = "select * from tasks where username = @username ";
+                string SQLSelect = "select * from tasks where username = @username order by state desc, category_id ";
                 command = new SqlCommand(SQLSelect, connection);
                 command.Parameters.AddWithValue("@username", username);
                 dataReader = command.ExecuteReader(CommandBehavior.CloseConnection);
@@ -61,7 +61,28 @@ namespace DataAccess {
             }
             return tasks;
         }
-
+        public void UpdateTaskState(int id, string status) {
+           
+            SqlConnection connection = null;
+            SqlCommand command = null;
+           
+            try {
+                connection = DbHelper.getConnection();
+                connection.Open();
+                string SQLSelect = "update tasks set [state] = @status where [task_id] = @id";
+                command = new SqlCommand(SQLSelect, connection);
+                command.Parameters.AddWithValue("@status", status);
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex) {
+                throw new Exception(ex.Message);
+            }
+            finally {
+                connection.Close();
+            }
+            
+        }
 
     }
 }

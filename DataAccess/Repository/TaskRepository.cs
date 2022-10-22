@@ -10,6 +10,7 @@ namespace DataAccess.Repository
     public class TaskRepository : ITaskRepository
     {
         public List<TaskObject> GetAllTaskOfUser(string username) => TaskDAO.Instance.GetAllTaskOfUser(username);
+        public void UpdateTaskState(int id, string status) => TaskDAO.Instance.UpdateTaskState(id, status);
 
         public TaskObject GetTaskByTaskId(int taskId)
         {
