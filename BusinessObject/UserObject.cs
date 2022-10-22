@@ -21,6 +21,6 @@
         public string Password { get; set; }
         public string FullName { get; set; }
         public string BirthOfDate { get; set; }
-        public string ImagePath { get; set }
+        public string ImagePath { get; set; }
     }
 }
