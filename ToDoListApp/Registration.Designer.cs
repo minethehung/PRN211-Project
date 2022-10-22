@@ -41,6 +41,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimeBirthDay = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
+            this.pBImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pBImage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -158,11 +160,20 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Image Cover: ";
             // 
+            // pBImage
+            // 
+            this.pBImage.Location = new System.Drawing.Point(292, 335);
+            this.pBImage.Name = "pBImage";
+            this.pBImage.Size = new System.Drawing.Size(125, 62);
+            this.pBImage.TabIndex = 14;
+            this.pBImage.TabStop = false;
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.pBImage);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimeBirthDay);
             this.Controls.Add(this.textBox1);
@@ -179,6 +190,7 @@
             this.Name = "Registration";
             this.Text = "Registration";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.pBImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +211,6 @@
         private Label label6;
         private DateTimePicker dateTimeBirthDay;
         private Label label7;
+        private PictureBox pBImage;
     }
 }
