@@ -12,11 +12,12 @@ namespace Group9_Project
 {
     public partial class Home : Form
     {
+        
         public Home()
         {
             InitializeComponent();
         }
-
+        
         private void button6_Click(object sender, EventArgs e)
         {
             this.Close();
