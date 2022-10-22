@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using BusinessObject;
 using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace DataAccess {
     public class TaskDAO {
@@ -23,9 +24,37 @@ namespace DataAccess {
             }
         }
         public List<TaskObject> GetAllTaskOfUser(string username) {
-            List<TaskObject> list = new List<TaskObject>();
-            public SqlConnection connection = null;
-            
+            List<TaskObject> tasks = new List<TaskObject>();
+            SqlConnection connection = null;
+            SqlCommand command = null;
+            SqlDataReader dataReader = null;
+            try {
+                connection = DbHelper.getConnection();
+                connection.Open();
+                string SQLSelect = "select * from tasks where username = @username ";
+                command = new SqlCommand(SQLSelect, connection);
+                command.Parameters.AddWithValue("@username", username);
+                dataReader = command.ExecuteReader(CommandBehavior.CloseConnection);
+                if (dataReader.HasRows == true) {
+                    while(dataReader.Read()) {
+                        tasks.Add(new TaskObject {
+                            TaskId = dataReader.GetInt32("task_id"),
+                            Title = dataReader.GetString("title"),
+                            Description = dataReader.GetString("description"),
+                            
+                        });
+                    }
+                }
+            }
+            catch (Exception ex) {
+
+            }
+            finally {
+                connection.Close();
+            }
+            return tasks;
         }
+
     }
 }
+
