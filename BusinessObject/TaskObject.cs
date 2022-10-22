@@ -9,7 +9,7 @@
 
         }
 
-        public TaskObject(int taskId, string title, string description, string dueDate, int categoryId, int repeatId, int remind, string startDate, int groupId, string username, string state) {
+        public TaskObject(int taskId, string title, string description, DateTime dueDate, int categoryId, int repeatId, DateTime remind, DateTime startDate, int groupId, string username, string state) {
             TaskId = taskId;
             Title = title;
             Description = description;
