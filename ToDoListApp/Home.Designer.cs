@@ -104,7 +104,6 @@
             this.button4.TabIndex = 1;
             this.button4.Text = "Search";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnExit
             // 
@@ -114,7 +113,6 @@
             this.btnExit.TabIndex = 43;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnLogout
             // 
@@ -124,7 +122,6 @@
             this.btnLogout.TabIndex = 42;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnImportant
             // 
@@ -152,7 +149,7 @@
             this.btnCreate.TabIndex = 39;
             this.btnCreate.Text = "New Task";
             this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.button1_Click);
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // taskList
             // 

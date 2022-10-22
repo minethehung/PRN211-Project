@@ -17,21 +17,6 @@ namespace Group9_Project
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -39,6 +24,13 @@ namespace Group9_Project
 
         private void Home_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e) {
+            Create frmCreate = new Create();
+            this.Hide();
+            frmCreate.ShowDialog();
 
         }
     }

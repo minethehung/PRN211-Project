@@ -2,35 +2,27 @@
 {
     public class TaskObject
     {
-        private int taskId;
-        private string title;
-        private string description;
-        private string dueDate;
-        private int categoryId;
-        private int repeatId;
-        private int remind;
-        private string startDate;
-        private int groupId;
-        private string username;
-        private string state;
-        public TaskObject(int taskId, string title, string description, string dueDate, int categoryId, int repeatId, int remind, string startDate, int groupId, string username, string state)
-        {
-            this.taskId = taskId;
-            this.title = title;
-            this.description = description;
-            this.dueDate = dueDate;
-            this.categoryId = categoryId;
-            this.repeatId = repeatId;
-            this.remind = remind;
-            this.startDate = startDate;
-            this.groupId = groupId;
-            this.username = username;
-            this.state = state;
-        }
+      
+        
         public TaskObject()
         {
 
         }
+
+        public TaskObject(int taskId, string title, string description, string dueDate, int categoryId, int repeatId, int remind, string startDate, int groupId, string username, string state) {
+            TaskId = taskId;
+            Title = title;
+            Description = description;
+            DueDate = dueDate;
+            CategoryId = categoryId;
+            RepeatId = repeatId;
+            Remind = remind;
+            StartDate = startDate;
+            GroupId = groupId;
+            Username = username;
+            State = state;
+        }
+
         public int TaskId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
