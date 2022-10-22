@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelUsername = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -93,7 +93,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.labelUsername);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Location = new System.Drawing.Point(0, 89);
             this.panel1.Name = "panel1";
@@ -102,21 +102,22 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(33, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(33, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(144, 138);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             // 
-            // label3
+            // labelUsername
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(33, 132);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 31);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "Name of User";
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelUsername.Location = new System.Drawing.Point(33, 148);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(160, 31);
+            this.labelUsername.TabIndex = 45;
+            this.labelUsername.Text = "Name of User";
             // 
             // btnLogout
             // 
@@ -219,7 +220,7 @@
         private Label label2;
         private Panel panel1;
         private PictureBox pictureBox1;
-        private Label label3;
+        private Label labelUsername;
         private Button btnExit;
         private Button btnLogout;
         private Panel panel2;

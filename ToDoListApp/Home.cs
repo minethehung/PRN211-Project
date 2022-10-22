@@ -25,9 +25,10 @@ namespace Group9_Project
         public UserObject User { get; set; }
 
         private void Home_Load(object sender, EventArgs e){
-            this.User = new UserObject {
-                Username = "admin"
-            };
+            labelUsername.Text = User.FullName;
+            if (User.ImagePath != null) {
+                pictureBox1.ImageLocation = User.ImagePath;
+            }
             LoadData();
            
         }
@@ -143,11 +144,6 @@ namespace Group9_Project
                     taskRepository.UpdateTaskState(id, "Complete");
                 }
                 LoadData();
-                for (int i = 0; i < taskList.Rows.Count; i++) {
-                    if (int.Parse(taskList.Rows[i].Cells[0].Value.ToString()) == id) {
-                        taskList.Rows[i].Selected = true;
-                    }
-                }
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Chang task status", MessageBoxButtons.OK);
