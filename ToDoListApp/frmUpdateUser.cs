@@ -73,17 +73,47 @@ namespace ToDoListApp
                     MessageBox.Show("Password Confirm must match!", "Error", MessageBoxButtons.OK);
                     this.ActiveControl = txtConfirm;
                 }
+                else
+                {
+                    try
+                    {
+                        UserObject user = new UserObject();
+                        user.Username = loggedInUser.Username;
+                        user.FullName = txtName.Text;
+                        user.DateOfBirh = dateTimeBirthDay.Value;
+                        user.Password = txtPassword.Text.ToString();
+                        user.ImagePath = pBImage.ImageLocation.ToString();
+                        userRepository.UpdateUser(user);
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine(ex.Message + "Update User");
+                    }
+
+                }
             }
             else
             {
-                UserObject user = new UserObject();
-                user.Username = loggedInUser.Username;
-                user.FullName = txtName.Text;
-                user.DateOfBirh = dateTimeBirthDay.Value;
-                user.Password = txtPassword.Text;
-                user.ImagePath = pBImage.ImageLocation.ToString();
-                userRepository.UpdateUser(user);
-                this.Close();
+                try
+                {
+                    UserObject user = new UserObject();
+                    user.Username = loggedInUser.Username;
+                    user.FullName = txtName.Text;
+                    user.DateOfBirh = dateTimeBirthDay.Value;
+                    if (gBPassword.Visible == false)
+                    {
+                        user.Password = loggedInUser.Password;
+
+                    }
+                    user.ImagePath = pBImage.ImageLocation.ToString();
+                    userRepository.UpdateUser(user);
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message + "Update User");
+                }
             }
         }
 
@@ -107,6 +137,11 @@ namespace ToDoListApp
             {
                 MessageBox.Show("Cannot load the image!");
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
