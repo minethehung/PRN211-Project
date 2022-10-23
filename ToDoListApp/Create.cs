@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToDoListApp;
 
 namespace Group9_Project
 {
@@ -63,7 +64,7 @@ namespace Group9_Project
                 {
                     taskGroups = new List<TaskGroupObject>();
                 }
-                taskGroups.Append(new TaskGroupObject
+                taskGroups = taskGroups.Append(new TaskGroupObject
                 {
                     Name = "Add new group"
                 });
@@ -277,6 +278,23 @@ namespace Group9_Project
         private void ckbSa_CheckedChanged(object sender, EventArgs e)
         {
             ckbSa.BackColor = ckbSa.Checked ? SystemColors.MenuHighlight : SystemColors.ButtonHighlight;
+        }
+
+        private void cboGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedGroup = cboGroup.Text;
+            if (selectedGroup.Equals("Add new group"))
+            {
+                frmAddGroup frmAddGroup = new frmAddGroup()
+                {
+                    LoginUser = this.LoginUser,
+                    TaskGroupRepository = this.taskGroupRepository
+                };
+                if (frmAddGroup.ShowDialog() == DialogResult.OK)
+                {
+                    cboTaskGroup_LoadDataSource(true);
+                }
+            }
         }
     }
 }

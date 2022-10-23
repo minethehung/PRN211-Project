@@ -110,5 +110,50 @@ namespace DataAccess
             }
             return result;
         }
+        public TaskGroupObject GetTaskGroupByUserAndName(string username, string name)
+        {
+            TaskGroupObject result = null;
+            List<TaskGroupObject> taskGroups = GetTaskGroupListByUser(username);
+            if (taskGroups != null)
+            {
+                result = taskGroups.SingleOrDefault(g => g.Name.Equals(name));
+            }
+
+            return result;
+        }
+        public void InsertTaskGroup(TaskGroupObject taskGroup)
+        {
+            if (GetTaskGroupByUserAndName(taskGroup.Username, taskGroup.Name) != null)
+            {
+                throw new Exception($"Group '{taskGroup.Name}' has been already created by {taskGroup.Username}!");
+            }
+            SqlConnection con = null;
+            try
+            {
+                con = DbHelper.getConnection();
+                if (con != null)
+                {
+                    using (SqlCommand cmd = con.CreateCommand())
+                    {
+                        cmd.CommandText = "INSERT INTO [task_group] ([name], [description], [username]) " +
+                                          "VALUES (@name, @description, @username) ";
+                        cmd.Parameters.AddWithValue("@name", taskGroup.Name);
+                        cmd.Parameters.AddWithValue("@description", taskGroup.Description);
+                        cmd.Parameters.AddWithValue("@username", taskGroup.Username);
+                        con.Open();
+                        int affectedRows = cmd.ExecuteNonQuery();
+                        con.Close();
+                        if (affectedRows == 0)
+                        {
+                            throw new Exception("Failed to add new group!");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

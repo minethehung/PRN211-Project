@@ -92,7 +92,7 @@
             // 
             this.lbRemind.AutoSize = true;
             this.lbRemind.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbRemind.Location = new System.Drawing.Point(25, 351);
+            this.lbRemind.Location = new System.Drawing.Point(25, 344);
             this.lbRemind.Name = "lbRemind";
             this.lbRemind.Size = new System.Drawing.Size(84, 25);
             this.lbRemind.TabIndex = 4;
@@ -151,7 +151,7 @@
             // 
             this.lbCategory.AutoSize = true;
             this.lbCategory.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbCategory.Location = new System.Drawing.Point(25, 202);
+            this.lbCategory.Location = new System.Drawing.Point(25, 197);
             this.lbCategory.Name = "lbCategory";
             this.lbCategory.Size = new System.Drawing.Size(97, 25);
             this.lbCategory.TabIndex = 17;
@@ -196,7 +196,7 @@
             // 
             this.lbGroup.AutoSize = true;
             this.lbGroup.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbGroup.Location = new System.Drawing.Point(25, 250);
+            this.lbGroup.Location = new System.Drawing.Point(25, 245);
             this.lbGroup.Name = "lbGroup";
             this.lbGroup.Size = new System.Drawing.Size(69, 25);
             this.lbGroup.TabIndex = 17;
@@ -211,6 +211,7 @@
             this.cboGroup.Name = "cboGroup";
             this.cboGroup.Size = new System.Drawing.Size(219, 23);
             this.cboGroup.TabIndex = 3;
+            this.cboGroup.SelectedIndexChanged += new System.EventHandler(this.cboGroup_SelectedIndexChanged);
             // 
             // groupRepeat
             // 

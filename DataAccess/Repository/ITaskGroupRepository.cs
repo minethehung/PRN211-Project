@@ -12,5 +12,7 @@ namespace DataAccess.Repository
         List<TaskGroupObject> GetTaskGroupList();
         List<TaskGroupObject> GetTaskGroupListByUser(string username);
         int GetTaskGroupId(string username, string groupName);
+        TaskGroupObject GetTaskGroupByUserAndName(string username, string name);
+        void InsertTaskGroup(TaskGroupObject taskGroup);
     }
 }
