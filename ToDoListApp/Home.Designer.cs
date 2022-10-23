@@ -45,6 +45,7 @@
             this.btnImportant = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.btnUpdateUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.taskList)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,7 +66,7 @@
             this.taskList.RowHeadersWidth = 51;
             this.taskList.RowTemplate.Height = 29;
             this.taskList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.taskList.Size = new System.Drawing.Size(482, 358);
+            this.taskList.Size = new System.Drawing.Size(482, 440);
             this.taskList.TabIndex = 38;
             this.taskList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.taskList_CellClick);
             // 
@@ -75,7 +76,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(-99, 464);
+            this.label1.Location = new System.Drawing.Point(-99, 546);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1145, 82);
             this.label1.TabIndex = 34;
@@ -96,6 +97,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnUpdateUser);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.labelUsername);
             this.panel1.Controls.Add(this.btnLogout);
@@ -126,7 +128,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(33, 201);
+            this.btnLogout.Location = new System.Drawing.Point(33, 236);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(160, 29);
             this.btnLogout.TabIndex = 46;
@@ -158,7 +160,7 @@
             this.panel2.Controls.Add(this.btnCreate);
             this.panel2.Location = new System.Drawing.Point(712, 92);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(235, 355);
+            this.panel2.Size = new System.Drawing.Size(235, 437);
             this.panel2.TabIndex = 46;
             // 
             // btbSearch
@@ -237,11 +239,21 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
+            // btnUpdateUser
+            // 
+            this.btnUpdateUser.Location = new System.Drawing.Point(33, 195);
+            this.btnUpdateUser.Name = "btnUpdateUser";
+            this.btnUpdateUser.Size = new System.Drawing.Size(160, 29);
+            this.btnUpdateUser.TabIndex = 47;
+            this.btnUpdateUser.Text = "Update my profile";
+            this.btnUpdateUser.UseVisualStyleBackColor = true;
+            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 546);
+            this.ClientSize = new System.Drawing.Size(947, 628);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -279,5 +291,6 @@
         private Button btnAllTask;
         private Button btbSearch;
         private TextBox txtSearch;
+        private Button btnUpdateUser;
     }
 }

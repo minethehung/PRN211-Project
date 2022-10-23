@@ -1,5 +1,7 @@
 ﻿using BusinessObject;
 using DataAccess.Repository;
+using System.Runtime.CompilerServices;
+using ToDoListApp;
 
 namespace Group9_Project
 {
@@ -11,6 +13,7 @@ namespace Group9_Project
             InitializeComponent();
         }
         private ITaskRepository taskRepository = new TaskRepository();
+        private IUserRepository userRepository = new UserRepository();
         private BindingSource source = null;
         public UserObject User { get; set; }
 
@@ -40,10 +43,11 @@ namespace Group9_Project
             else {
                 btnDone.Text = "Done";
             }
-
+            enableButton();
         }
         private void LoadData()
         {
+            disableButton();
             try
             {
                 List<TaskObject> tasks = taskRepository.GetAllTaskOfUser(this.User.Username);
@@ -89,9 +93,17 @@ namespace Group9_Project
         {
             Close();
         }
-
+        private void disableButton () {
+            btnView.Enabled = false;
+            btnDone.Enabled = false;
+        }
+        private void enableButton () {
+            btnView.Enabled = true;
+            btnDone.Enabled = true;
+        }
         private void btnImportant_Click(object sender, EventArgs e)
         {
+            disableButton ();
             try
             {
                 List<TaskObject> tasks = taskRepository.GetAllTaskOfUser(this.User.Username);
@@ -129,7 +141,7 @@ namespace Group9_Project
             try
             {
                 UserObject user = User;
-                DetailForm frmDetail = new DetailForm() { UUser = user, Id = Convert.ToInt32(taskList.CurrentRow.Cells[0].Value.ToString()) };
+                DetailForm frmDetail = new DetailForm { UUser = user, Id = int.Parse(taskList.SelectedCells[0].Value.ToString()) };
                 this.Hide();
                 frmDetail.ShowDialog();
                 this.Show();       
@@ -180,6 +192,7 @@ namespace Group9_Project
         }
 
         private void btnMyDate_Click(object sender, EventArgs e) {
+            disableButton();
             try {
                 List<TaskObject> tasks = taskRepository.GetAllTaskOfUser(this.User.Username);
                 List<dynamic> data = new List<dynamic>();
@@ -248,6 +261,23 @@ namespace Group9_Project
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Show important task", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnUpdateUser_Click(object sender, EventArgs e) {
+            try {
+                frmUpdateUser frmUpdateUser = new frmUpdateUser(this.User);
+                this.Hide();
+                frmUpdateUser.ShowDialog();
+                this.Show();
+                this.User = userRepository.GetUser(this.User.Username);
+                labelUsername.Text = User.FullName;
+                if (User.ImagePath != null) {
+                    pictureBox1.ImageLocation = User.ImagePath;
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Update profile", MessageBoxButtons.OK);
             }
         }
     }
