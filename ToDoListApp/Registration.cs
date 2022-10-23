@@ -32,8 +32,9 @@ namespace ToDoWinApp
 
                     imageLocation = openFileDialog.FileName;
                     pBImage.ImageLocation = imageLocation;
+                    btnAddImg.Text = "Change";
+
                 }
-                btnAddImg.Text = "Change";
             }
             catch (Exception ex)
             {
