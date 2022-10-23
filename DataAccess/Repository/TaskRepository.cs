@@ -14,7 +14,7 @@ namespace DataAccess.Repository
 
         public TaskObject GetTaskByTaskId(int taskId)
         {
-            throw new NotImplementedException();
+            return TaskDAO.Instance.GetTaskDetail(taskId);
         }
 
         public List<TaskObject> GetTasksByGroupId(int groupId)
@@ -35,10 +35,6 @@ namespace DataAccess.Repository
         public void UpdateTask(TaskObject task)
         {
             throw new NotImplementedException();
-        }
-        public TaskObject GetTaskDetail(int id)
-        {
-            return TaskDAO.Instance.GetTaskDetail(id);
         }
     }
 }

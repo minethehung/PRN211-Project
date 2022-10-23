@@ -16,7 +16,6 @@ namespace DataAccess.Repository
         void UpdateTask(TaskObject task);
         void RemoveTask(int taskId);
         List<TaskObject> GetTasksByGroupId(int groupId);
-        public TaskObject GetTaskDetail(int id);
 
     }
 }

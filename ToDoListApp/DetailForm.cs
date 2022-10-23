@@ -9,6 +9,14 @@ namespace Group9_Project
         public DetailForm()
         {
             InitializeComponent();
+            
+        }
+
+        public UserObject UUser { get; set; }
+        public int Id { get; set; }
+        private ITaskRepository repository = new TaskRepository();
+        private void Detail_Load(object sender, EventArgs e)
+        {
             txtTitle.Enabled = false;
             txtDes.Enabled = false;
             txtRemind.Enabled = false;
@@ -16,6 +24,7 @@ namespace Group9_Project
             comboCategory.Enabled = false;
             comboImportant.Enabled = false;
             groupRepeat.Enabled = false;
+            btnFinish.Enabled = false;
             List<string> repeat = MyAppConstants.repeat;
             for (int i = 0; i < repeat.Count; i++)
             {
@@ -26,15 +35,8 @@ namespace Group9_Project
             {
                 comboCategory.Items.Add(category[i]);
             }
-        }
-
-        public UserObject UUser { get; set; }
-        public int Id { get; set; }
-        private ITaskRepository repository = new TaskRepository();
-        private void Detail_Load(object sender, EventArgs e)
-        {
             int id = Id;
-            TaskObject taskObj = repository.GetTaskDetail(id);
+            TaskObject taskObj = repository.GetTaskByTaskId(id);
             txtTitle.Text = taskObj.Title;
             txtDes.Text = taskObj.Description;
             comboCategory.SelectedIndex = --taskObj.CategoryId;
@@ -52,6 +54,7 @@ namespace Group9_Project
             comboImportant.Enabled = true;
             groupRepeat.Enabled = true;
             comboCategory.Enabled = true;
+            btnFinish.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -59,20 +62,35 @@ namespace Group9_Project
             DialogResult res = MessageBox.Show("Are you sure you want to Update", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (res == DialogResult.OK)
             {
-                MessageBox.Show("You have clicked Ok Button");
-                //Some task…
+                //Code save here
+                this.Detail_Load(sender, e);
             }
             if (res == DialogResult.Cancel)
             {
-                MessageBox.Show("You have clicked Cancel Button");
-                //Some task…
+                this.Detail_Load(sender, e);
             }
 
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            if (btnFinish.Enabled)
+            {
+                DialogResult res = MessageBox.Show("Something was Changed. Do you want to save?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (res == DialogResult.OK)
+                {
+                    //Code save Here
+                    this.Close();
+                }
+                if (res == DialogResult.Cancel)
+                {
+                    this.Close();
+                }
+            } else
+            {
+                this.Close();
+            }
+                     
         }
 
         private void comboTypeRepeat_SelectedIndexChanged(object sender, EventArgs e)
