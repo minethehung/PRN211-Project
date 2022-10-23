@@ -96,6 +96,16 @@ namespace Group9_Project
             cboRepeatType.DataSource = bindingSource;
             txtRepeatCount.Text = "1";
         }
+        private void SetWeekDaysVisible(bool visible)
+        {
+            ckbMo.Visible = visible;
+            ckbTu.Visible = visible;
+            ckbWe.Visible = visible;
+            ckbTh.Visible = visible;
+            ckbFr.Visible = visible;
+            ckbSa.Visible = visible;
+            ckbSu.Visible = visible;
+        }
         private void Create_Load(object sender, EventArgs e)
         {
             try
@@ -103,13 +113,7 @@ namespace Group9_Project
                 cboCategory_LoadDataSource();
                 cboTaskGroup_LoadDataSource();
                 cboRepeatType_LoadDataSource();
-                ckbMo.Visible = false;
-                ckbTu.Visible = false;
-                ckbWe.Visible = false;
-                ckbTh.Visible = false;
-                ckbFr.Visible = false;
-                ckbSa.Visible = false;
-                ckbSu.Visible = false;
+                SetWeekDaysVisible(false);
             }
             catch (Exception ex)
             {
@@ -225,23 +229,12 @@ namespace Group9_Project
         {
             if (cboRepeatType.Text.Equals("weeks"))
             {
-                ckbMo.Visible = true;
-                ckbTu.Visible = true;
-                ckbWe.Visible = true;
-                ckbTh.Visible = true;
-                ckbFr.Visible = true;
-                ckbSa.Visible = true;
-                ckbSu.Visible = true;
+
+                SetWeekDaysVisible(true);
             }
             else
             {
-                ckbMo.Visible = false;
-                ckbTu.Visible = false;
-                ckbWe.Visible = false;
-                ckbTh.Visible = false;
-                ckbFr.Visible = false;
-                ckbSa.Visible = false;
-                ckbSu.Visible = false;
+                SetWeekDaysVisible(false);
             }
         }
 
