@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboRepeat = new System.Windows.Forms.ComboBox();
             this.comboImportant = new System.Windows.Forms.ComboBox();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -45,25 +44,18 @@
             this.comboCategory = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtRemind = new System.Windows.Forms.TextBox();
+            this.groupRepeat = new System.Windows.Forms.GroupBox();
+            this.Sa = new System.Windows.Forms.CheckBox();
+            this.Fr = new System.Windows.Forms.CheckBox();
+            this.Th = new System.Windows.Forms.CheckBox();
+            this.We = new System.Windows.Forms.CheckBox();
+            this.Tu = new System.Windows.Forms.CheckBox();
+            this.Mo = new System.Windows.Forms.CheckBox();
+            this.Su = new System.Windows.Forms.CheckBox();
+            this.comboTypeRepeat = new System.Windows.Forms.ComboBox();
+            this.txtRepeatCount = new System.Windows.Forms.TextBox();
+            this.groupRepeat.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // comboRepeat
-            // 
-            this.comboRepeat.FormattingEnabled = true;
-            this.comboRepeat.Items.AddRange(new object[] {
-            "No",
-            "Every Day",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"});
-            this.comboRepeat.Location = new System.Drawing.Point(205, 409);
-            this.comboRepeat.Name = "comboRepeat";
-            this.comboRepeat.Size = new System.Drawing.Size(250, 28);
-            this.comboRepeat.TabIndex = 30;
             // 
             // comboImportant
             // 
@@ -76,7 +68,7 @@
             // btnHome
             // 
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnHome.Location = new System.Drawing.Point(447, 455);
+            this.btnHome.Location = new System.Drawing.Point(447, 544);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(162, 39);
             this.btnHome.TabIndex = 28;
@@ -87,7 +79,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnUpdate.Location = new System.Drawing.Point(52, 455);
+            this.btnUpdate.Location = new System.Drawing.Point(52, 544);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(162, 39);
             this.btnUpdate.TabIndex = 27;
@@ -180,7 +172,7 @@
             // btnFinish
             // 
             this.btnFinish.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFinish.Location = new System.Drawing.Point(251, 455);
+            this.btnFinish.Location = new System.Drawing.Point(251, 544);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(162, 39);
             this.btnFinish.TabIndex = 31;
@@ -213,15 +205,126 @@
             this.txtRemind.Size = new System.Drawing.Size(250, 27);
             this.txtRemind.TabIndex = 25;
             // 
+            // groupRepeat
+            // 
+            this.groupRepeat.Controls.Add(this.Sa);
+            this.groupRepeat.Controls.Add(this.Fr);
+            this.groupRepeat.Controls.Add(this.Th);
+            this.groupRepeat.Controls.Add(this.We);
+            this.groupRepeat.Controls.Add(this.Tu);
+            this.groupRepeat.Controls.Add(this.Mo);
+            this.groupRepeat.Controls.Add(this.Su);
+            this.groupRepeat.Controls.Add(this.comboTypeRepeat);
+            this.groupRepeat.Controls.Add(this.txtRepeatCount);
+            this.groupRepeat.Location = new System.Drawing.Point(205, 397);
+            this.groupRepeat.Name = "groupRepeat";
+            this.groupRepeat.Size = new System.Drawing.Size(250, 131);
+            this.groupRepeat.TabIndex = 34;
+            this.groupRepeat.TabStop = false;
+            this.groupRepeat.Text = "Repeat Every ...";
+            // 
+            // Sa
+            // 
+            this.Sa.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Sa.AutoSize = true;
+            this.Sa.Location = new System.Drawing.Point(43, 95);
+            this.Sa.Name = "Sa";
+            this.Sa.Size = new System.Drawing.Size(35, 30);
+            this.Sa.TabIndex = 8;
+            this.Sa.Text = "Sa";
+            this.Sa.UseVisualStyleBackColor = true;
+            // 
+            // Fr
+            // 
+            this.Fr.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Fr.AutoSize = true;
+            this.Fr.Location = new System.Drawing.Point(6, 95);
+            this.Fr.Name = "Fr";
+            this.Fr.Size = new System.Drawing.Size(31, 30);
+            this.Fr.TabIndex = 7;
+            this.Fr.Text = "Fr";
+            this.Fr.UseVisualStyleBackColor = true;
+            // 
+            // Th
+            // 
+            this.Th.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Th.AutoSize = true;
+            this.Th.Location = new System.Drawing.Point(177, 59);
+            this.Th.Name = "Th";
+            this.Th.Size = new System.Drawing.Size(35, 30);
+            this.Th.TabIndex = 6;
+            this.Th.Text = "Th";
+            this.Th.UseVisualStyleBackColor = true;
+            // 
+            // We
+            // 
+            this.We.Appearance = System.Windows.Forms.Appearance.Button;
+            this.We.AutoSize = true;
+            this.We.Location = new System.Drawing.Point(131, 60);
+            this.We.Name = "We";
+            this.We.Size = new System.Drawing.Size(40, 30);
+            this.We.TabIndex = 5;
+            this.We.Text = "We";
+            this.We.UseVisualStyleBackColor = true;
+            // 
+            // Tu
+            // 
+            this.Tu.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Tu.AutoSize = true;
+            this.Tu.Location = new System.Drawing.Point(90, 60);
+            this.Tu.Name = "Tu";
+            this.Tu.Size = new System.Drawing.Size(35, 30);
+            this.Tu.TabIndex = 4;
+            this.Tu.Text = "Tu";
+            this.Tu.UseVisualStyleBackColor = true;
+            // 
+            // Mo
+            // 
+            this.Mo.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Mo.AutoSize = true;
+            this.Mo.Location = new System.Drawing.Point(43, 59);
+            this.Mo.Name = "Mo";
+            this.Mo.Size = new System.Drawing.Size(41, 30);
+            this.Mo.TabIndex = 3;
+            this.Mo.Text = "Mo";
+            this.Mo.UseVisualStyleBackColor = true;
+            // 
+            // Su
+            // 
+            this.Su.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Su.AutoSize = true;
+            this.Su.Location = new System.Drawing.Point(6, 59);
+            this.Su.Name = "Su";
+            this.Su.Size = new System.Drawing.Size(35, 30);
+            this.Su.TabIndex = 2;
+            this.Su.Text = "Su";
+            this.Su.UseVisualStyleBackColor = true;
+            // 
+            // comboTypeRepeat
+            // 
+            this.comboTypeRepeat.FormattingEnabled = true;
+            this.comboTypeRepeat.Location = new System.Drawing.Point(67, 26);
+            this.comboTypeRepeat.Name = "comboTypeRepeat";
+            this.comboTypeRepeat.Size = new System.Drawing.Size(177, 28);
+            this.comboTypeRepeat.TabIndex = 1;
+            this.comboTypeRepeat.SelectedIndexChanged += new System.EventHandler(this.comboTypeRepeat_SelectedIndexChanged);
+            // 
+            // txtRepeatCount
+            // 
+            this.txtRepeatCount.Location = new System.Drawing.Point(6, 26);
+            this.txtRepeatCount.Name = "txtRepeatCount";
+            this.txtRepeatCount.Size = new System.Drawing.Size(55, 27);
+            this.txtRepeatCount.TabIndex = 0;
+            // 
             // DetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 509);
+            this.ClientSize = new System.Drawing.Size(652, 595);
+            this.Controls.Add(this.groupRepeat);
             this.Controls.Add(this.comboCategory);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnFinish);
-            this.Controls.Add(this.comboRepeat);
             this.Controls.Add(this.comboImportant);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnUpdate);
@@ -238,14 +341,14 @@
             this.Name = "DetailForm";
             this.Text = "Detail";
             this.Load += new System.EventHandler(this.Detail_Load);
+            this.groupRepeat.ResumeLayout(false);
+            this.groupRepeat.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private ComboBox comboRepeat;
         private ComboBox comboImportant;
         private Button btnHome;
         private Button btnUpdate;
@@ -262,5 +365,15 @@
         private ComboBox comboCategory;
         private Label label7;
         private TextBox txtRemind;
+        private GroupBox groupRepeat;
+        private CheckBox Su;
+        private ComboBox comboTypeRepeat;
+        private TextBox txtRepeatCount;
+        private CheckBox Sa;
+        private CheckBox Fr;
+        private CheckBox Th;
+        private CheckBox We;
+        private CheckBox Tu;
+        private CheckBox Mo;
     }
 }

@@ -15,11 +15,11 @@ namespace Group9_Project
             dateTimeDeadline.Enabled = false;
             comboCategory.Enabled = false;
             comboImportant.Enabled = false;
-            comboRepeat.Enabled = false;
+            groupRepeat.Enabled = false;
             List<string> repeat = MyAppConstants.repeat;
-            for(int i = 0; i< repeat.Count; i++)
+            for (int i = 0; i < repeat.Count; i++)
             {
-                comboRepeat.Items.Add(repeat[i]);
+                comboTypeRepeat.Items.Add(repeat[i]);
             }
             List<string> category = MyAppConstants.category;
             for (int i = 0; i < category.Count; i++)
@@ -39,7 +39,8 @@ namespace Group9_Project
             txtDes.Text = taskObj.Description;
             comboCategory.SelectedIndex = --taskObj.CategoryId;
             dateTimeDeadline.Value = taskObj.DueDate;
-            comboRepeat.SelectedIndex = --taskObj.RepeatId;
+            comboTypeRepeat.SelectedIndex = --taskObj.RepeatId;
+            comboTypeRepeat_SelectedIndexChanged(sender, e);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,7 +50,7 @@ namespace Group9_Project
             txtRemind.Enabled = true;
             dateTimeDeadline.Enabled = true;
             comboImportant.Enabled = true;
-            comboRepeat.Enabled = true;
+            groupRepeat.Enabled = true;
             comboCategory.Enabled = true;
         }
 
@@ -72,6 +73,30 @@ namespace Group9_Project
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void comboTypeRepeat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboTypeRepeat.SelectedItem.ToString() == "Week")
+            {
+                Su.Visible = true;
+                Mo.Visible = true;
+                Tu.Visible = true;
+                We.Visible = true;
+                Th.Visible = true;
+                Fr.Visible = true;
+                Sa.Visible = true;
+            }
+            else
+            {
+                Su.Visible = false;
+                Mo.Visible = false;
+                Tu.Visible = false;
+                We.Visible = false;
+                Th.Visible = false;
+                Fr.Visible = false;
+                Sa.Visible = false;
+            }
         }
     }
 }
