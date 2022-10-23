@@ -66,9 +66,6 @@ namespace Group9_Project
                     source.DataSource = data;
                     SetDataSource(source);
                 }
-                else {
-                    MessageBox.Show("You do not have any task", "Show task", MessageBoxButtons.OK);
-                }
             }
             catch (Exception ex)
             {
