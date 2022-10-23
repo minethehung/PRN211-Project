@@ -28,217 +28,362 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.lbTitle = new System.Windows.Forms.Label();
+            this.lbDescription = new System.Windows.Forms.Label();
+            this.lbDueDate = new System.Windows.Forms.Label();
+            this.lbRemind = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
-            this.txtRemind = new System.Windows.Forms.TextBox();
-            this.dateTimeDeadline = new System.Windows.Forms.DateTimePicker();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.dateDueDate = new System.Windows.Forms.DateTimePicker();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.comboImportant = new System.Windows.Forms.ComboBox();
-            this.comboRepeat = new System.Windows.Forms.ComboBox();
-            this.txtCategory = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboCategory = new System.Windows.Forms.ComboBox();
+            this.lbCategory = new System.Windows.Forms.Label();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
+            this.dateRemind = new System.Windows.Forms.DateTimePicker();
+            this.timeDueDate = new System.Windows.Forms.DateTimePicker();
+            this.timeRemind = new System.Windows.Forms.DateTimePicker();
+            this.lbGroup = new System.Windows.Forms.Label();
+            this.cboGroup = new System.Windows.Forms.ComboBox();
+            this.groupRepeat = new System.Windows.Forms.GroupBox();
+            this.ckbSa = new System.Windows.Forms.CheckBox();
+            this.ckbFr = new System.Windows.Forms.CheckBox();
+            this.ckbTh = new System.Windows.Forms.CheckBox();
+            this.ckbWe = new System.Windows.Forms.CheckBox();
+            this.ckbTu = new System.Windows.Forms.CheckBox();
+            this.ckbMo = new System.Windows.Forms.CheckBox();
+            this.ckbSu = new System.Windows.Forms.CheckBox();
+            this.cboRepeatType = new System.Windows.Forms.ComboBox();
+            this.txtRepeatCount = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupRepeat.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lbTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(29, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name: ";
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbTitle.Location = new System.Drawing.Point(25, 24);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(52, 25);
+            this.lbTitle.TabIndex = 0;
+            this.lbTitle.Text = "Title:";
             // 
-            // label2
+            // lbDescription
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(29, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 31);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Title: ";
+            this.lbDescription.AutoSize = true;
+            this.lbDescription.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbDescription.Location = new System.Drawing.Point(25, 72);
+            this.lbDescription.Name = "lbDescription";
+            this.lbDescription.Size = new System.Drawing.Size(112, 25);
+            this.lbDescription.TabIndex = 1;
+            this.lbDescription.Text = "Description:";
             // 
-            // label3
+            // lbDueDate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(29, 236);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 31);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Deadline:";
+            this.lbDueDate.AutoSize = true;
+            this.lbDueDate.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbDueDate.Location = new System.Drawing.Point(25, 296);
+            this.lbDueDate.Name = "lbDueDate";
+            this.lbDueDate.Size = new System.Drawing.Size(92, 25);
+            this.lbDueDate.TabIndex = 2;
+            this.lbDueDate.Text = "Due date:";
             // 
-            // label4
+            // lbRemind
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(29, 284);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 31);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Important: ";
+            this.lbRemind.AutoSize = true;
+            this.lbRemind.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbRemind.Location = new System.Drawing.Point(25, 351);
+            this.lbRemind.Name = "lbRemind";
+            this.lbRemind.Size = new System.Drawing.Size(84, 25);
+            this.lbRemind.TabIndex = 4;
+            this.lbRemind.Text = "Remind: ";
             // 
-            // label5
+            // txtTitle
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(29, 335);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 31);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Remind: ";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.txtTitle.Location = new System.Drawing.Point(139, 26);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(354, 23);
+            this.txtTitle.TabIndex = 0;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(139, 74);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(354, 102);
+            this.txtDescription.TabIndex = 1;
+            // 
+            // dateDueDate
+            // 
+            this.dateDueDate.Location = new System.Drawing.Point(139, 298);
+            this.dateDueDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateDueDate.Name = "dateDueDate";
+            this.dateDueDate.Size = new System.Drawing.Size(219, 23);
+            this.dateDueDate.TabIndex = 4;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCreate.Location = new System.Drawing.Point(25, 517);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(142, 29);
+            this.btnCreate.TabIndex = 10;
+            this.btnCreate.Text = "&Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnExit.Location = new System.Drawing.Point(351, 517);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(142, 29);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.Text = "&Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lbCategory
+            // 
+            this.lbCategory.AutoSize = true;
+            this.lbCategory.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbCategory.Location = new System.Drawing.Point(25, 202);
+            this.lbCategory.Name = "lbCategory";
+            this.lbCategory.Size = new System.Drawing.Size(97, 25);
+            this.lbCategory.TabIndex = 17;
+            this.lbCategory.Text = "Category: ";
+            // 
+            // cboCategory
+            // 
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.ItemHeight = 15;
+            this.cboCategory.Location = new System.Drawing.Point(139, 202);
+            this.cboCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(219, 23);
+            this.cboCategory.TabIndex = 2;
+            // 
+            // dateRemind
+            // 
+            this.dateRemind.Location = new System.Drawing.Point(139, 346);
+            this.dateRemind.Name = "dateRemind";
+            this.dateRemind.Size = new System.Drawing.Size(219, 23);
+            this.dateRemind.TabIndex = 6;
+            // 
+            // timeDueDate
+            // 
+            this.timeDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timeDueDate.Location = new System.Drawing.Point(364, 298);
+            this.timeDueDate.Name = "timeDueDate";
+            this.timeDueDate.ShowUpDown = true;
+            this.timeDueDate.Size = new System.Drawing.Size(81, 23);
+            this.timeDueDate.TabIndex = 5;
+            // 
+            // timeRemind
+            // 
+            this.timeRemind.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timeRemind.Location = new System.Drawing.Point(364, 346);
+            this.timeRemind.Name = "timeRemind";
+            this.timeRemind.ShowUpDown = true;
+            this.timeRemind.Size = new System.Drawing.Size(81, 23);
+            this.timeRemind.TabIndex = 7;
+            // 
+            // lbGroup
+            // 
+            this.lbGroup.AutoSize = true;
+            this.lbGroup.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbGroup.Location = new System.Drawing.Point(25, 250);
+            this.lbGroup.Name = "lbGroup";
+            this.lbGroup.Size = new System.Drawing.Size(69, 25);
+            this.lbGroup.TabIndex = 17;
+            this.lbGroup.Text = "Group:";
+            // 
+            // cboGroup
+            // 
+            this.cboGroup.FormattingEnabled = true;
+            this.cboGroup.ItemHeight = 15;
+            this.cboGroup.Location = new System.Drawing.Point(139, 250);
+            this.cboGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboGroup.Name = "cboGroup";
+            this.cboGroup.Size = new System.Drawing.Size(219, 23);
+            this.cboGroup.TabIndex = 3;
+            // 
+            // groupRepeat
+            // 
+            this.groupRepeat.Controls.Add(this.ckbSa);
+            this.groupRepeat.Controls.Add(this.ckbFr);
+            this.groupRepeat.Controls.Add(this.ckbTh);
+            this.groupRepeat.Controls.Add(this.ckbWe);
+            this.groupRepeat.Controls.Add(this.ckbTu);
+            this.groupRepeat.Controls.Add(this.ckbMo);
+            this.groupRepeat.Controls.Add(this.ckbSu);
+            this.groupRepeat.Controls.Add(this.cboRepeatType);
+            this.groupRepeat.Controls.Add(this.txtRepeatCount);
+            this.groupRepeat.Location = new System.Drawing.Point(139, 396);
+            this.groupRepeat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupRepeat.Name = "groupRepeat";
+            this.groupRepeat.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupRepeat.Size = new System.Drawing.Size(219, 98);
+            this.groupRepeat.TabIndex = 36;
+            this.groupRepeat.TabStop = false;
+            this.groupRepeat.Text = "Every:";
+            // 
+            // ckbSa
+            // 
+            this.ckbSa.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ckbSa.AutoSize = true;
+            this.ckbSa.Location = new System.Drawing.Point(38, 70);
+            this.ckbSa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbSa.Name = "ckbSa";
+            this.ckbSa.Size = new System.Drawing.Size(29, 25);
+            this.ckbSa.TabIndex = 8;
+            this.ckbSa.Text = "Sa";
+            this.ckbSa.UseVisualStyleBackColor = true;
+            this.ckbSa.CheckedChanged += new System.EventHandler(this.ckbSa_CheckedChanged);
+            // 
+            // ckbFr
+            // 
+            this.ckbFr.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ckbFr.AutoSize = true;
+            this.ckbFr.Location = new System.Drawing.Point(5, 70);
+            this.ckbFr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbFr.Name = "ckbFr";
+            this.ckbFr.Size = new System.Drawing.Size(27, 25);
+            this.ckbFr.TabIndex = 7;
+            this.ckbFr.Text = "Fr";
+            this.ckbFr.UseVisualStyleBackColor = true;
+            this.ckbFr.CheckedChanged += new System.EventHandler(this.ckbFr_CheckedChanged);
+            // 
+            // ckbTh
+            // 
+            this.ckbTh.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ckbTh.AutoSize = true;
+            this.ckbTh.Location = new System.Drawing.Point(155, 43);
+            this.ckbTh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbTh.Name = "ckbTh";
+            this.ckbTh.Size = new System.Drawing.Size(30, 25);
+            this.ckbTh.TabIndex = 6;
+            this.ckbTh.Text = "Th";
+            this.ckbTh.UseVisualStyleBackColor = true;
+            this.ckbTh.CheckedChanged += new System.EventHandler(this.ckbTh_CheckedChanged);
+            // 
+            // ckbWe
+            // 
+            this.ckbWe.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ckbWe.AutoSize = true;
+            this.ckbWe.Location = new System.Drawing.Point(115, 44);
+            this.ckbWe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbWe.Name = "ckbWe";
+            this.ckbWe.Size = new System.Drawing.Size(34, 25);
+            this.ckbWe.TabIndex = 5;
+            this.ckbWe.Text = "We";
+            this.ckbWe.UseVisualStyleBackColor = true;
+            this.ckbWe.CheckedChanged += new System.EventHandler(this.ckbWe_CheckedChanged);
+            // 
+            // ckbTu
+            // 
+            this.ckbTu.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ckbTu.AutoSize = true;
+            this.ckbTu.Location = new System.Drawing.Point(79, 44);
+            this.ckbTu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbTu.Name = "ckbTu";
+            this.ckbTu.Size = new System.Drawing.Size(30, 25);
+            this.ckbTu.TabIndex = 4;
+            this.ckbTu.Text = "Tu";
+            this.ckbTu.UseVisualStyleBackColor = true;
+            this.ckbTu.CheckedChanged += new System.EventHandler(this.ckbTu_CheckedChanged);
+            // 
+            // ckbMo
+            // 
+            this.ckbMo.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ckbMo.AutoSize = true;
+            this.ckbMo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ckbMo.Location = new System.Drawing.Point(38, 43);
+            this.ckbMo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbMo.Name = "ckbMo";
+            this.ckbMo.Size = new System.Drawing.Size(35, 25);
+            this.ckbMo.TabIndex = 3;
+            this.ckbMo.Text = "Mo";
+            this.ckbMo.UseVisualStyleBackColor = false;
+            this.ckbMo.CheckedChanged += new System.EventHandler(this.ckbMo_CheckedChanged);
+            // 
+            // ckbSu
+            // 
+            this.ckbSu.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ckbSu.AutoSize = true;
+            this.ckbSu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ckbSu.Location = new System.Drawing.Point(5, 43);
+            this.ckbSu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbSu.Name = "ckbSu";
+            this.ckbSu.Size = new System.Drawing.Size(30, 25);
+            this.ckbSu.TabIndex = 2;
+            this.ckbSu.Text = "Su";
+            this.ckbSu.UseVisualStyleBackColor = false;
+            this.ckbSu.CheckedChanged += new System.EventHandler(this.ckbSu_CheckedChanged);
+            // 
+            // cboRepeatType
+            // 
+            this.cboRepeatType.FormattingEnabled = true;
+            this.cboRepeatType.Location = new System.Drawing.Point(59, 20);
+            this.cboRepeatType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboRepeatType.Name = "cboRepeatType";
+            this.cboRepeatType.Size = new System.Drawing.Size(155, 23);
+            this.cboRepeatType.TabIndex = 9;
+            this.cboRepeatType.SelectedIndexChanged += new System.EventHandler(this.cboRepeatType_SelectedIndexChanged);
+            // 
+            // txtRepeatCount
+            // 
+            this.txtRepeatCount.Location = new System.Drawing.Point(5, 20);
+            this.txtRepeatCount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRepeatCount.Name = "txtRepeatCount";
+            this.txtRepeatCount.Size = new System.Drawing.Size(49, 23);
+            this.txtRepeatCount.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(29, 383);
+            this.label6.Location = new System.Drawing.Point(25, 396);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 31);
-            this.label6.TabIndex = 5;
+            this.label6.Size = new System.Drawing.Size(78, 25);
+            this.label6.TabIndex = 35;
             this.label6.Text = "Repeat: ";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(182, 34);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(404, 27);
-            this.txtName.TabIndex = 6;
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Location = new System.Drawing.Point(182, 84);
-            this.txtTitle.Multiline = true;
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(404, 69);
-            this.txtTitle.TabIndex = 7;
-            // 
-            // txtRemind
-            // 
-            this.txtRemind.Location = new System.Drawing.Point(182, 341);
-            this.txtRemind.Name = "txtRemind";
-            this.txtRemind.Size = new System.Drawing.Size(250, 27);
-            this.txtRemind.TabIndex = 10;
-            // 
-            // dateTimeDeadline
-            // 
-            this.dateTimeDeadline.Location = new System.Drawing.Point(182, 240);
-            this.dateTimeDeadline.Name = "dateTimeDeadline";
-            this.dateTimeDeadline.Size = new System.Drawing.Size(250, 27);
-            this.dateTimeDeadline.TabIndex = 12;
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCreate.Location = new System.Drawing.Point(29, 432);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(162, 39);
-            this.btnCreate.TabIndex = 13;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExit.Location = new System.Drawing.Point(424, 432);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(162, 39);
-            this.btnExit.TabIndex = 14;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // comboImportant
-            // 
-            this.comboImportant.FormattingEnabled = true;
-            this.comboImportant.Location = new System.Drawing.Point(182, 290);
-            this.comboImportant.Name = "comboImportant";
-            this.comboImportant.Size = new System.Drawing.Size(250, 28);
-            this.comboImportant.TabIndex = 15;
-            // 
-            // comboRepeat
-            // 
-            this.comboRepeat.FormattingEnabled = true;
-            this.comboRepeat.Items.AddRange(new object[] {
-            "No",
-            "Every Day",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"});
-            this.comboRepeat.Location = new System.Drawing.Point(182, 386);
-            this.comboRepeat.Name = "comboRepeat";
-            this.comboRepeat.Size = new System.Drawing.Size(250, 28);
-            this.comboRepeat.TabIndex = 16;
-            this.comboRepeat.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // txtCategory
-            // 
-            this.txtCategory.Location = new System.Drawing.Point(438, 181);
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(148, 27);
-            this.txtCategory.TabIndex = 18;
-            this.txtCategory.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(29, 175);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 31);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Category: ";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // comboCategory
-            // 
-            this.comboCategory.FormattingEnabled = true;
-            this.comboCategory.Location = new System.Drawing.Point(182, 181);
-            this.comboCategory.Name = "comboCategory";
-            this.comboCategory.Size = new System.Drawing.Size(250, 28);
-            this.comboCategory.TabIndex = 19;
             // 
             // Create
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 483);
-            this.Controls.Add(this.comboCategory);
-            this.Controls.Add(this.txtCategory);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboRepeat);
-            this.Controls.Add(this.comboImportant);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(520, 568);
+            this.Controls.Add(this.groupRepeat);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.timeRemind);
+            this.Controls.Add(this.timeDueDate);
+            this.Controls.Add(this.dateRemind);
+            this.Controls.Add(this.cboGroup);
+            this.Controls.Add(this.lbGroup);
+            this.Controls.Add(this.cboCategory);
+            this.Controls.Add(this.lbCategory);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCreate);
-            this.Controls.Add(this.dateTimeDeadline);
-            this.Controls.Add(this.txtRemind);
+            this.Controls.Add(this.dateDueDate);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbRemind);
+            this.Controls.Add(this.lbDueDate);
+            this.Controls.Add(this.lbDescription);
+            this.Controls.Add(this.lbTitle);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Create";
-            this.Text = "Create";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Create task";
             this.Load += new System.EventHandler(this.Create_Load);
+            this.groupRepeat.ResumeLayout(false);
+            this.groupRepeat.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,22 +391,32 @@
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private TextBox txtName;
+        private Label lbTitle;
+        private Label lbDescription;
+        private Label lbDueDate;
+        private Label lbRemind;
         private TextBox txtTitle;
-        private TextBox txtRemind;
-        private DateTimePicker dateTimeDeadline;
+        private TextBox txtDescription;
+        private DateTimePicker dateDueDate;
         private Button btnCreate;
         private Button btnExit;
-        private ComboBox comboImportant;
-        private ComboBox comboRepeat;
-        private TextBox txtCategory;
-        private Label label7;
-        private ComboBox comboCategory;
+        private Label lbCategory;
+        private ComboBox cboCategory;
+        private DateTimePicker dateRemind;
+        private DateTimePicker timeDueDate;
+        private DateTimePicker timeRemind;
+        private Label lbGroup;
+        private ComboBox cboGroup;
+        private GroupBox groupRepeat;
+        private CheckBox ckbSa;
+        private CheckBox ckbFr;
+        private CheckBox ckbTh;
+        private CheckBox ckbWe;
+        private CheckBox ckbTu;
+        private CheckBox ckbMo;
+        private CheckBox ckbSu;
+        private ComboBox cboRepeatType;
+        private TextBox txtRepeatCount;
+        private Label label6;
     }
 }

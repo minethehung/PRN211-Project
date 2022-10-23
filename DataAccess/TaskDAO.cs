@@ -51,7 +51,7 @@ namespace DataAccess
                             Description = dataReader.GetString("description"),
                             DueDate = dataReader.GetDateTime("due_date"),
                             CategoryId = dataReader.GetInt32("category_id"),
-                            RepeatId = dataReader.GetInt32("repeat_id"),
+                            Repeat = dataReader.GetString("repeat"),
                             Remind = dataReader.GetDateTime("remind_time"),
                             StartDate = dataReader.GetDateTime("start_date"),
                             GroupId = dataReader.GetInt32("group_id"),
@@ -97,6 +97,45 @@ namespace DataAccess
             }
 
         }
+        public void InsertTask(TaskObject task)
+        {
+            SqlConnection connection = null;
+            SqlCommand command = null;
+
+            try
+            {
+                connection = DbHelper.getConnection();
+                connection.Open();
+                string SQLSelect = "INSERT INTO tasks ([title], [description], [due_date], [category_id], [repeat], [remind_time], " +
+                                    "[start_date], [group_id], [username], [state]) " +
+                                    "VALUES (@title, @description, @due_date, @category_id, @repeat, @remind_time, " +
+                                    "@start_date, @group_id, @username, @state) ";
+                command = new SqlCommand(SQLSelect, connection);
+                command.Parameters.AddWithValue("@title", task.Title);
+                command.Parameters.AddWithValue("@description", task.Description);
+                command.Parameters.AddWithValue("@due_date", task.DueDate);
+                command.Parameters.AddWithValue("@category_id", task.CategoryId);
+                command.Parameters.AddWithValue("@repeat", task.Repeat);
+                command.Parameters.AddWithValue("@remind_time", task.Remind);
+                command.Parameters.AddWithValue("@start_date", task.StartDate);
+                command.Parameters.AddWithValue("@group_id", task.GroupId);
+                command.Parameters.AddWithValue("@username", task.Username);
+                command.Parameters.AddWithValue("@state", task.State);
+                int affectedRows = command.ExecuteNonQuery();
+                if (affectedRows == 0)
+                {
+                    throw new Exception("Failed to insert task!");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
 
         public TaskObject GetTaskDetail(int id)
         {
@@ -122,7 +161,7 @@ namespace DataAccess
                             rd.GetString("description"),
                             rd.GetDateTime("due_date"),
                             rd.GetInt32("category_id"),
-                            rd.GetInt32("repeat_id"),
+                            rd.GetString("repeat"),
                             rd.GetDateTime("remind_time"),
                             rd.GetDateTime("start_date"),
                             rd.GetInt32("group_id"),

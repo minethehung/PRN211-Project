@@ -41,7 +41,6 @@ namespace Group9_Project
             txtDes.Text = taskObj.Description;
             comboCategory.SelectedIndex = --taskObj.CategoryId;
             dateTimeDeadline.Value = taskObj.DueDate;
-            comboTypeRepeat.SelectedIndex = --taskObj.RepeatId;
             comboTypeRepeat_SelectedIndexChanged(sender, e);
         }
 

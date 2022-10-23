@@ -22,10 +22,7 @@ namespace DataAccess.Repository
             throw new NotImplementedException();
         }
 
-        public void InsertTask(TaskObject task)
-        {
-            throw new NotImplementedException();
-        }
+        public void InsertTask(TaskObject task) => TaskDAO.Instance.InsertTask(task);
 
         public void RemoveTask(int taskId)
         {

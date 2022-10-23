@@ -77,7 +77,10 @@ namespace Group9_Project
         }
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            Create frmCreate = new Create();
+            Create frmCreate = new Create()
+            {
+                LoginUser = this.User,
+            };
             this.Hide();
             frmCreate.ShowDialog();
             this.Show();
