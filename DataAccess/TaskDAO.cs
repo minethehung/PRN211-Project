@@ -97,6 +97,27 @@ namespace DataAccess
             }
 
         }
+        public void RemoveTask(int id) {
+
+            SqlConnection connection = null;
+            SqlCommand command = null;
+
+            try {
+                connection = DbHelper.getConnection();
+                connection.Open();
+                string SQLSelect = "delete from tasks where [task_id] = @id";
+                command = new SqlCommand(SQLSelect, connection);
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex) {
+                throw new Exception(ex.Message);
+            }
+            finally {
+                connection.Close();
+            }
+
+        }
         public void InsertTask(TaskObject task)
         {
             SqlConnection connection = null;

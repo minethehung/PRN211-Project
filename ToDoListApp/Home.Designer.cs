@@ -32,11 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUpdateUser = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelUsername = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btbSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAllTask = new System.Windows.Forms.Button();
@@ -45,7 +47,6 @@
             this.btnImportant = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
-            this.btnUpdateUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.taskList)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,6 +107,16 @@
             this.panel1.Size = new System.Drawing.Size(218, 358);
             this.panel1.TabIndex = 45;
             // 
+            // btnUpdateUser
+            // 
+            this.btnUpdateUser.Location = new System.Drawing.Point(33, 211);
+            this.btnUpdateUser.Name = "btnUpdateUser";
+            this.btnUpdateUser.Size = new System.Drawing.Size(160, 29);
+            this.btnUpdateUser.TabIndex = 47;
+            this.btnUpdateUser.Text = "Update my profile";
+            this.btnUpdateUser.UseVisualStyleBackColor = true;
+            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(33, 3);
@@ -128,7 +139,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(33, 236);
+            this.btnLogout.Location = new System.Drawing.Point(33, 252);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(160, 29);
             this.btnLogout.TabIndex = 46;
@@ -138,7 +149,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(21, 302);
+            this.btnExit.Location = new System.Drawing.Point(21, 343);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(202, 29);
             this.btnExit.TabIndex = 47;
@@ -149,6 +160,7 @@
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btbSearch);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.btnAllTask);
@@ -162,6 +174,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(235, 437);
             this.panel2.TabIndex = 46;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(21, 239);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(202, 29);
+            this.btnDelete.TabIndex = 52;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btbSearch
             // 
@@ -192,7 +214,7 @@
             // 
             // btnMyDate
             // 
-            this.btnMyDate.Location = new System.Drawing.Point(21, 268);
+            this.btnMyDate.Location = new System.Drawing.Point(21, 309);
             this.btnMyDate.Name = "btnMyDate";
             this.btnMyDate.Size = new System.Drawing.Size(202, 29);
             this.btnMyDate.TabIndex = 48;
@@ -212,7 +234,7 @@
             // 
             // btnImportant
             // 
-            this.btnImportant.Location = new System.Drawing.Point(21, 233);
+            this.btnImportant.Location = new System.Drawing.Point(21, 274);
             this.btnImportant.Name = "btnImportant";
             this.btnImportant.Size = new System.Drawing.Size(202, 29);
             this.btnImportant.TabIndex = 44;
@@ -238,16 +260,6 @@
             this.btnCreate.Text = "New Task";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
-            // btnUpdateUser
-            // 
-            this.btnUpdateUser.Location = new System.Drawing.Point(33, 195);
-            this.btnUpdateUser.Name = "btnUpdateUser";
-            this.btnUpdateUser.Size = new System.Drawing.Size(160, 29);
-            this.btnUpdateUser.TabIndex = 47;
-            this.btnUpdateUser.Text = "Update my profile";
-            this.btnUpdateUser.UseVisualStyleBackColor = true;
-            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
             // 
             // Home
             // 
@@ -292,5 +304,6 @@
         private Button btbSearch;
         private TextBox txtSearch;
         private Button btnUpdateUser;
+        private Button btnDelete;
     }
 }

@@ -96,10 +96,12 @@ namespace Group9_Project
         private void disableButton () {
             btnView.Enabled = false;
             btnDone.Enabled = false;
+            btnDelete.Enabled = false;
         }
         private void enableButton () {
             btnView.Enabled = true;
             btnDone.Enabled = true;
+            btnDelete.Enabled = true;
         }
         private void btnImportant_Click(object sender, EventArgs e)
         {
@@ -192,7 +194,6 @@ namespace Group9_Project
         }
 
         private void btnMyDate_Click(object sender, EventArgs e) {
-            disableButton();
             try {
                 List<TaskObject> tasks = taskRepository.GetAllTaskOfUser(this.User.Username);
                 List<dynamic> data = new List<dynamic>();
@@ -229,7 +230,7 @@ namespace Group9_Project
         }
 
         private void btbSearch_Click(object sender, EventArgs e) {
-            try {
+           try {
                 string searchValue = txtSearch.Text.Trim();
                 if (searchValue.Length == 0) {
                     throw new Exception("Search value is empty");
@@ -278,6 +279,20 @@ namespace Group9_Project
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Update profile", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e) {
+            DialogResult res = MessageBox.Show("Are you sure to delete this task", "Delete task", MessageBoxButtons.OKCancel);
+            if (res == DialogResult.OK) { 
+                try {
+                    int id = int.Parse(taskList.SelectedCells[0].Value.ToString());
+                    taskRepository.RemoveTask(id);
+                    LoadData();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message, "Delete task", MessageBoxButtons.OK);
+                }
             }
         }
     }
