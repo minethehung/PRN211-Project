@@ -36,5 +36,9 @@ namespace DataAccess.Repository
         {
             throw new NotImplementedException();
         }
+        public TaskObject GetTaskDetail(int id)
+        {
+            return TaskDAO.Instance.GetTaskDetail(id);
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Group9_Project
 {
-    partial class Detail
+    partial class DetailForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtRepeat = new System.Windows.Forms.ComboBox();
+            this.comboRepeat = new System.Windows.Forms.ComboBox();
             this.comboImportant = new System.Windows.Forms.ComboBox();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dateTimeDeadline = new System.Windows.Forms.DateTimePicker();
-            this.txtRemind = new System.Windows.Forms.TextBox();
+            this.txtDes = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,12 +44,13 @@
             this.btnFinish = new System.Windows.Forms.Button();
             this.comboCategory = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtRemind = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // txtRepeat
+            // comboRepeat
             // 
-            this.txtRepeat.FormattingEnabled = true;
-            this.txtRepeat.Items.AddRange(new object[] {
+            this.comboRepeat.FormattingEnabled = true;
+            this.comboRepeat.Items.AddRange(new object[] {
             "No",
             "Every Day",
             "Monday",
@@ -60,10 +60,10 @@
             "Friday",
             "Saturday",
             "Sunday"});
-            this.txtRepeat.Location = new System.Drawing.Point(205, 409);
-            this.txtRepeat.Name = "txtRepeat";
-            this.txtRepeat.Size = new System.Drawing.Size(250, 28);
-            this.txtRepeat.TabIndex = 30;
+            this.comboRepeat.Location = new System.Drawing.Point(205, 409);
+            this.comboRepeat.Name = "comboRepeat";
+            this.comboRepeat.Size = new System.Drawing.Size(250, 28);
+            this.comboRepeat.TabIndex = 30;
             // 
             // comboImportant
             // 
@@ -82,6 +82,7 @@
             this.btnHome.TabIndex = 28;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnUpdate
             // 
@@ -101,27 +102,20 @@
             this.dateTimeDeadline.Size = new System.Drawing.Size(250, 27);
             this.dateTimeDeadline.TabIndex = 26;
             // 
-            // txtRemind
+            // txtDes
             // 
-            this.txtRemind.Location = new System.Drawing.Point(205, 364);
-            this.txtRemind.Name = "txtRemind";
-            this.txtRemind.Size = new System.Drawing.Size(250, 27);
-            this.txtRemind.TabIndex = 25;
+            this.txtDes.Location = new System.Drawing.Point(205, 116);
+            this.txtDes.Multiline = true;
+            this.txtDes.Name = "txtDes";
+            this.txtDes.Size = new System.Drawing.Size(404, 69);
+            this.txtDes.TabIndex = 24;
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(205, 116);
-            this.txtTitle.Multiline = true;
+            this.txtTitle.Location = new System.Drawing.Point(205, 66);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(404, 69);
-            this.txtTitle.TabIndex = 24;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(205, 66);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(404, 27);
-            this.txtName.TabIndex = 23;
+            this.txtTitle.Size = new System.Drawing.Size(404, 27);
+            this.txtTitle.TabIndex = 23;
             // 
             // label6
             // 
@@ -149,9 +143,9 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(52, 307);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 31);
+            this.label4.Size = new System.Drawing.Size(89, 31);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Important: ";
+            this.label4.Text = "Group: ";
             // 
             // label3
             // 
@@ -169,9 +163,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(52, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 31);
+            this.label2.Size = new System.Drawing.Size(142, 31);
             this.label2.TabIndex = 18;
-            this.label2.Text = "Title: ";
+            this.label2.Text = "Description: ";
             // 
             // label1
             // 
@@ -179,9 +173,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(52, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 31);
+            this.label1.Size = new System.Drawing.Size(69, 31);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Name: ";
+            this.label1.Text = "Title: ";
             // 
             // btnFinish
             // 
@@ -212,7 +206,14 @@
             this.label7.TabIndex = 32;
             this.label7.Text = "Category: ";
             // 
-            // Detail
+            // txtRemind
+            // 
+            this.txtRemind.Location = new System.Drawing.Point(205, 364);
+            this.txtRemind.Name = "txtRemind";
+            this.txtRemind.Size = new System.Drawing.Size(250, 27);
+            this.txtRemind.TabIndex = 25;
+            // 
+            // DetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -220,23 +221,22 @@
             this.Controls.Add(this.comboCategory);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnFinish);
-            this.Controls.Add(this.txtRepeat);
+            this.Controls.Add(this.comboRepeat);
             this.Controls.Add(this.comboImportant);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dateTimeDeadline);
             this.Controls.Add(this.txtRemind);
+            this.Controls.Add(this.txtDes);
             this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Detail";
+            this.Name = "DetailForm";
             this.Text = "Detail";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Detail_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,14 +245,13 @@
 
         #endregion
 
-        private ComboBox txtRepeat;
+        private ComboBox comboRepeat;
         private ComboBox comboImportant;
         private Button btnHome;
         private Button btnUpdate;
         private DateTimePicker dateTimeDeadline;
-        private TextBox txtRemind;
+        private TextBox txtDes;
         private TextBox txtTitle;
-        private TextBox txtName;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -262,5 +261,6 @@
         private Button btnFinish;
         private ComboBox comboCategory;
         private Label label7;
+        private TextBox txtRemind;
     }
 }
