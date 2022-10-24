@@ -19,8 +19,10 @@ namespace Group9_Project
         {
             txtTitle.Enabled = false;
             txtDes.Enabled = false;
-            txtRemind.Enabled = false;
-            dateTimeDeadline.Enabled = false;
+            dateDueDate.Enabled = false;
+            timeDueDate.Enabled = false;
+            dateRemind.Enabled = false;
+            timeRemind.Enabled = false;
             comboCategory.Enabled = false;
             comboImportant.Enabled = false;
             groupRepeat.Enabled = false;
@@ -40,7 +42,8 @@ namespace Group9_Project
             txtTitle.Text = taskObj.Title;
             txtDes.Text = taskObj.Description;
             comboCategory.SelectedIndex = --taskObj.CategoryId;
-            dateTimeDeadline.Value = taskObj.DueDate;
+            comboTypeRepeat.SelectedIndex = 0;
+            //dateTimeDeadline.Value = taskObj.DueDate;
             comboTypeRepeat_SelectedIndexChanged(sender, e);
         }
 
@@ -48,8 +51,10 @@ namespace Group9_Project
         {
             txtTitle.Enabled = true;
             txtDes.Enabled = true;
-            txtRemind.Enabled = true;
-            dateTimeDeadline.Enabled = true;
+            dateDueDate.Enabled = true;
+            timeDueDate.Enabled = true;
+            dateRemind.Enabled = true;
+            timeRemind.Enabled = true;
             comboImportant.Enabled = true;
             groupRepeat.Enabled = true;
             comboCategory.Enabled = true;
@@ -114,6 +119,68 @@ namespace Group9_Project
                 Fr.Visible = false;
                 Sa.Visible = false;
             }
+        }
+        private string CheckEmptyString(string s)
+        {
+            if (s == null || s.Trim().Equals(""))
+            {
+                throw new Exception("Input field cannot be empty!");
+            }
+            return s.Trim();
+        }
+        private string GetRepeatString()
+        {
+            string repeatCount = CheckEmptyString(txtRepeatCount.Text);
+            string repeatType = CheckEmptyString(comboTypeRepeat.Text);
+            string result = repeatCount + " " + repeatType;
+            if (!repeatType.Equals("weeks"))
+            {
+                return result;
+            }
+            result += "/";
+            if (Mo.Checked)
+            {
+                result += "Mo, ";
+            }
+            if (Tu.Checked)
+            {
+                result += "Tu, ";
+            }
+            if (We.Checked)
+            {
+                result += "We, ";
+            }
+            if (Th.Checked)
+            {
+                result += "Th, ";
+            }
+            if (Fr.Checked)
+            {
+                result += "Fr, ";
+            }
+            if (Sa.Checked)
+            {
+                result += "Sa, ";
+            }
+            if (Su.Checked)
+            {
+                result += "Su, ";
+            }
+
+            return result.Substring(0, result.Length - 2);
+        }
+        private void getRepeatTime(string repeat)
+        {
+
+        }
+        private DateTime ConverToDateTime(string date, string time)
+        {
+            DateTime result;
+            DateTime.TryParseExact($"{date} {time}",
+                    new string[] { "dd MMMM yyyy HH:mm:ss" },
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None, out result);
+            return result;
         }
     }
 }

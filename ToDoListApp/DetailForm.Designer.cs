@@ -31,19 +31,15 @@
             this.comboImportant = new System.Windows.Forms.ComboBox();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.dateTimeDeadline = new System.Windows.Forms.DateTimePicker();
             this.txtDes = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFinish = new System.Windows.Forms.Button();
             this.comboCategory = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtRemind = new System.Windows.Forms.TextBox();
             this.groupRepeat = new System.Windows.Forms.GroupBox();
             this.Sa = new System.Windows.Forms.CheckBox();
             this.Fr = new System.Windows.Forms.CheckBox();
@@ -54,13 +50,19 @@
             this.Su = new System.Windows.Forms.CheckBox();
             this.comboTypeRepeat = new System.Windows.Forms.ComboBox();
             this.txtRepeatCount = new System.Windows.Forms.TextBox();
+            this.timeRemind = new System.Windows.Forms.DateTimePicker();
+            this.timeDueDate = new System.Windows.Forms.DateTimePicker();
+            this.dateRemind = new System.Windows.Forms.DateTimePicker();
+            this.dateDueDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupRepeat.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboImportant
             // 
             this.comboImportant.FormattingEnabled = true;
-            this.comboImportant.Location = new System.Drawing.Point(205, 313);
+            this.comboImportant.Location = new System.Drawing.Point(205, 269);
             this.comboImportant.Name = "comboImportant";
             this.comboImportant.Size = new System.Drawing.Size(250, 28);
             this.comboImportant.TabIndex = 29;
@@ -68,7 +70,7 @@
             // btnHome
             // 
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnHome.Location = new System.Drawing.Point(447, 544);
+            this.btnHome.Location = new System.Drawing.Point(447, 604);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(162, 39);
             this.btnHome.TabIndex = 28;
@@ -79,20 +81,13 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnUpdate.Location = new System.Drawing.Point(52, 544);
+            this.btnUpdate.Location = new System.Drawing.Point(52, 604);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(162, 39);
             this.btnUpdate.TabIndex = 27;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dateTimeDeadline
-            // 
-            this.dateTimeDeadline.Location = new System.Drawing.Point(205, 263);
-            this.dateTimeDeadline.Name = "dateTimeDeadline";
-            this.dateTimeDeadline.Size = new System.Drawing.Size(250, 27);
-            this.dateTimeDeadline.TabIndex = 26;
             // 
             // txtDes
             // 
@@ -113,41 +108,21 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(52, 406);
+            this.label6.Location = new System.Drawing.Point(52, 466);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 31);
             this.label6.TabIndex = 22;
             this.label6.Text = "Repeat: ";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(52, 358);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 31);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Remind: ";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(52, 307);
+            this.label4.Location = new System.Drawing.Point(52, 263);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 31);
             this.label4.TabIndex = 20;
             this.label4.Text = "Group: ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(52, 259);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 31);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Deadline:";
             // 
             // label2
             // 
@@ -172,7 +147,7 @@
             // btnFinish
             // 
             this.btnFinish.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFinish.Location = new System.Drawing.Point(251, 544);
+            this.btnFinish.Location = new System.Drawing.Point(251, 604);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(162, 39);
             this.btnFinish.TabIndex = 31;
@@ -198,13 +173,6 @@
             this.label7.TabIndex = 32;
             this.label7.Text = "Category: ";
             // 
-            // txtRemind
-            // 
-            this.txtRemind.Location = new System.Drawing.Point(205, 364);
-            this.txtRemind.Name = "txtRemind";
-            this.txtRemind.Size = new System.Drawing.Size(250, 27);
-            this.txtRemind.TabIndex = 25;
-            // 
             // groupRepeat
             // 
             this.groupRepeat.Controls.Add(this.Sa);
@@ -216,7 +184,7 @@
             this.groupRepeat.Controls.Add(this.Su);
             this.groupRepeat.Controls.Add(this.comboTypeRepeat);
             this.groupRepeat.Controls.Add(this.txtRepeatCount);
-            this.groupRepeat.Location = new System.Drawing.Point(205, 397);
+            this.groupRepeat.Location = new System.Drawing.Point(205, 457);
             this.groupRepeat.Name = "groupRepeat";
             this.groupRepeat.Size = new System.Drawing.Size(250, 131);
             this.groupRepeat.TabIndex = 34;
@@ -316,11 +284,72 @@
             this.txtRepeatCount.Size = new System.Drawing.Size(55, 27);
             this.txtRepeatCount.TabIndex = 0;
             // 
+            // timeRemind
+            // 
+            this.timeRemind.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timeRemind.Location = new System.Drawing.Point(462, 386);
+            this.timeRemind.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.timeRemind.Name = "timeRemind";
+            this.timeRemind.ShowUpDown = true;
+            this.timeRemind.Size = new System.Drawing.Size(92, 27);
+            this.timeRemind.TabIndex = 40;
+            // 
+            // timeDueDate
+            // 
+            this.timeDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timeDueDate.Location = new System.Drawing.Point(462, 327);
+            this.timeDueDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.timeDueDate.Name = "timeDueDate";
+            this.timeDueDate.ShowUpDown = true;
+            this.timeDueDate.Size = new System.Drawing.Size(92, 27);
+            this.timeDueDate.TabIndex = 38;
+            // 
+            // dateRemind
+            // 
+            this.dateRemind.Location = new System.Drawing.Point(205, 386);
+            this.dateRemind.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateRemind.Name = "dateRemind";
+            this.dateRemind.Size = new System.Drawing.Size(250, 27);
+            this.dateRemind.TabIndex = 39;
+            // 
+            // dateDueDate
+            // 
+            this.dateDueDate.Location = new System.Drawing.Point(205, 327);
+            this.dateDueDate.Name = "dateDueDate";
+            this.dateDueDate.Size = new System.Drawing.Size(250, 27);
+            this.dateDueDate.TabIndex = 36;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(52, 323);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 31);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Due Date: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(52, 384);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 31);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "Remind: ";
+            // 
             // DetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 595);
+            this.ClientSize = new System.Drawing.Size(652, 666);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.timeRemind);
+            this.Controls.Add(this.timeDueDate);
+            this.Controls.Add(this.dateRemind);
+            this.Controls.Add(this.dateDueDate);
             this.Controls.Add(this.groupRepeat);
             this.Controls.Add(this.comboCategory);
             this.Controls.Add(this.label7);
@@ -328,14 +357,10 @@
             this.Controls.Add(this.comboImportant);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.dateTimeDeadline);
-            this.Controls.Add(this.txtRemind);
             this.Controls.Add(this.txtDes);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DetailForm";
@@ -352,19 +377,15 @@
         private ComboBox comboImportant;
         private Button btnHome;
         private Button btnUpdate;
-        private DateTimePicker dateTimeDeadline;
         private TextBox txtDes;
         private TextBox txtTitle;
         private Label label6;
-        private Label label5;
         private Label label4;
-        private Label label3;
         private Label label2;
         private Label label1;
         private Button btnFinish;
         private ComboBox comboCategory;
         private Label label7;
-        private TextBox txtRemind;
         private GroupBox groupRepeat;
         private CheckBox Su;
         private ComboBox comboTypeRepeat;
@@ -375,5 +396,11 @@
         private CheckBox We;
         private CheckBox Tu;
         private CheckBox Mo;
+        private DateTimePicker timeRemind;
+        private DateTimePicker timeDueDate;
+        private DateTimePicker dateRemind;
+        private DateTimePicker dateDueDate;
+        private Label label3;
+        private Label label5;
     }
 }

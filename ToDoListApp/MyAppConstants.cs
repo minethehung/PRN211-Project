@@ -9,7 +9,7 @@
         {
             repeat = new List<string>();
                 repeat.Add("Day");
-                repeat.Add("Week");
+                repeat.Add("weeks");
             category = new List<string>();
                 category.Add("Critical");
                 category.Add("High");
