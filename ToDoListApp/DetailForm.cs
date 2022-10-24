@@ -1,6 +1,5 @@
 ﻿using BusinessObject;
 using DataAccess.Repository;
-using ToDoListApp;
 
 namespace Group9_Project
 {
@@ -9,7 +8,7 @@ namespace Group9_Project
         public DetailForm()
         {
             InitializeComponent();
-            
+
         }
 
         public UserObject UUser { get; set; }
@@ -27,52 +26,31 @@ namespace Group9_Project
             comboImportant.Enabled = false;
             groupRepeat.Enabled = false;
             btnFinish.Enabled = false;
-            List<string> repeat = MyAppConstants.repeat;
-            for (int i = 0; i < repeat.Count; i++)
-            {
-                comboTypeRepeat.Items.Add(repeat[i]);
-            }
-            List<string> category = MyAppConstants.category;
-            for (int i = 0; i < category.Count; i++)
-            {
-                comboCategory.Items.Add(category[i]);
-            }
             int id = Id;
             TaskObject taskObj = repository.GetTaskByTaskId(id);
             txtTitle.Text = taskObj.Title;
             txtDes.Text = taskObj.Description;
             comboCategory.SelectedIndex = --taskObj.CategoryId;
-            comboTypeRepeat.SelectedIndex = 0;
+            getRepeatTime(taskObj.Repeat);
+            DateTime dateTimeDueDate = taskObj.DueDate;
+            dateDueDate.Text = dateTimeDueDate.ToShortDateString();
+            timeDueDate.Text = dateTimeDueDate.ToLongTimeString();
+            DateTime dateTimeRemid = taskObj.Remind;
+            dateRemind.Text = dateTimeRemid.ToShortDateString();
+            timeRemind.Text = dateTimeRemid.ToLongTimeString();
+            //comboTypeRepeat.SelectedIndex = 0;
             //dateTimeDeadline.Value = taskObj.DueDate;
             comboTypeRepeat_SelectedIndexChanged(sender, e);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtTitle.Enabled = true;
-            txtDes.Enabled = true;
-            dateDueDate.Enabled = true;
-            timeDueDate.Enabled = true;
-            dateRemind.Enabled = true;
-            timeRemind.Enabled = true;
-            comboImportant.Enabled = true;
-            groupRepeat.Enabled = true;
-            comboCategory.Enabled = true;
-            btnFinish.Enabled = true;
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Are you sure you want to Update", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (res == DialogResult.OK)
-            {
-                //Code save here
-                this.Detail_Load(sender, e);
-            }
-            if (res == DialogResult.Cancel)
-            {
-                this.Detail_Load(sender, e);
-            }
+
 
         }
 
@@ -90,16 +68,17 @@ namespace Group9_Project
                 {
                     this.Close();
                 }
-            } else
+            }
+            else
             {
                 this.Close();
             }
-                     
+
         }
 
         private void comboTypeRepeat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboTypeRepeat.SelectedItem.ToString() == "Week")
+            if (comboTypeRepeat.SelectedItem.ToString() == "weeks")
             {
                 Su.Visible = true;
                 Mo.Visible = true;
@@ -171,6 +150,50 @@ namespace Group9_Project
         }
         private void getRepeatTime(string repeat)
         {
+            string[] repeatCount = repeat.Split(" ");
+            string count = repeatCount[0];
+            string[] repeatTime = repeatCount[1].Split("/");
+            txtRepeatCount.Text = count;
+            if (repeatTime[0] == "days")
+            {
+                comboTypeRepeat.SelectedIndex = 0;
+            }
+            else
+            {
+                comboTypeRepeat.SelectedIndex = 1;
+                for(int i = 1; i < repeatTime.Length; i++)
+                {
+                    System.Diagnostics.Debug.WriteLine(repeatTime[i]);
+                    if(repeatTime[i] == "Mo")
+                    {
+                        Mo.Checked = true;
+                    }
+                    if (repeatTime[i] == "Tu")
+                    {
+                        Tu.Checked = true;
+                    }
+                    if (repeatTime[i] == "We")
+                    {
+                        We.Checked = true;
+                    }
+                    if (repeatTime[i] == "Th")
+                    {
+                        Th.Checked = true;
+                    }
+                    if (repeatTime[i] == "Fr")
+                    {
+                        Fr.Checked = true;
+                    }
+                    if (repeatTime[i] == "Sa")
+                    {
+                        Sa.Checked = true;
+                    }
+                    if (repeatTime[i] == "Su")
+                    {
+                        Su.Checked = true;
+                    }
+                }
+            }
 
         }
         private DateTime ConverToDateTime(string date, string time)
@@ -181,6 +204,34 @@ namespace Group9_Project
                     System.Globalization.CultureInfo.InvariantCulture,
                     System.Globalization.DateTimeStyles.None, out result);
             return result;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            txtTitle.Enabled = true;
+            txtDes.Enabled = true;
+            dateDueDate.Enabled = true;
+            timeDueDate.Enabled = true;
+            dateRemind.Enabled = true;
+            timeRemind.Enabled = true;
+            comboImportant.Enabled = true;
+            groupRepeat.Enabled = true;
+            comboCategory.Enabled = true;
+            btnFinish.Enabled = true;
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Are you sure you want to Update", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                //Code save here
+                this.Detail_Load(sender, e);
+            }
+            if (res == DialogResult.Cancel)
+            {
+                this.Detail_Load(sender, e);
+            }
         }
     }
 }

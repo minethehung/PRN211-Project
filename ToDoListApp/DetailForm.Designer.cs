@@ -43,13 +43,13 @@
             this.groupRepeat = new System.Windows.Forms.GroupBox();
             this.Sa = new System.Windows.Forms.CheckBox();
             this.Fr = new System.Windows.Forms.CheckBox();
+            this.comboTypeRepeat = new System.Windows.Forms.ComboBox();
             this.Th = new System.Windows.Forms.CheckBox();
+            this.txtRepeatCount = new System.Windows.Forms.TextBox();
             this.We = new System.Windows.Forms.CheckBox();
+            this.Su = new System.Windows.Forms.CheckBox();
             this.Tu = new System.Windows.Forms.CheckBox();
             this.Mo = new System.Windows.Forms.CheckBox();
-            this.Su = new System.Windows.Forms.CheckBox();
-            this.comboTypeRepeat = new System.Windows.Forms.ComboBox();
-            this.txtRepeatCount = new System.Windows.Forms.TextBox();
             this.timeRemind = new System.Windows.Forms.DateTimePicker();
             this.timeDueDate = new System.Windows.Forms.DateTimePicker();
             this.dateRemind = new System.Windows.Forms.DateTimePicker();
@@ -87,7 +87,7 @@
             this.btnUpdate.TabIndex = 27;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.button1_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtDes
             // 
@@ -153,11 +153,16 @@
             this.btnFinish.TabIndex = 31;
             this.btnFinish.Text = "Finished";
             this.btnFinish.UseVisualStyleBackColor = true;
-            this.btnFinish.Click += new System.EventHandler(this.button3_Click);
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // comboCategory
             // 
             this.comboCategory.FormattingEnabled = true;
+            this.comboCategory.Items.AddRange(new object[] {
+            "Critical",
+            "High",
+            "Normal",
+            "Low"});
             this.comboCategory.Location = new System.Drawing.Point(205, 212);
             this.comboCategory.Name = "comboCategory";
             this.comboCategory.Size = new System.Drawing.Size(250, 28);
@@ -177,13 +182,13 @@
             // 
             this.groupRepeat.Controls.Add(this.Sa);
             this.groupRepeat.Controls.Add(this.Fr);
+            this.groupRepeat.Controls.Add(this.comboTypeRepeat);
             this.groupRepeat.Controls.Add(this.Th);
+            this.groupRepeat.Controls.Add(this.txtRepeatCount);
             this.groupRepeat.Controls.Add(this.We);
+            this.groupRepeat.Controls.Add(this.Su);
             this.groupRepeat.Controls.Add(this.Tu);
             this.groupRepeat.Controls.Add(this.Mo);
-            this.groupRepeat.Controls.Add(this.Su);
-            this.groupRepeat.Controls.Add(this.comboTypeRepeat);
-            this.groupRepeat.Controls.Add(this.txtRepeatCount);
             this.groupRepeat.Location = new System.Drawing.Point(205, 457);
             this.groupRepeat.Name = "groupRepeat";
             this.groupRepeat.Size = new System.Drawing.Size(250, 131);
@@ -195,87 +200,49 @@
             // 
             this.Sa.Appearance = System.Windows.Forms.Appearance.Button;
             this.Sa.AutoSize = true;
-            this.Sa.Location = new System.Drawing.Point(43, 95);
+            this.Sa.BackColor = System.Drawing.SystemColors.Control;
+            this.Sa.Location = new System.Drawing.Point(46, 95);
             this.Sa.Name = "Sa";
             this.Sa.Size = new System.Drawing.Size(35, 30);
-            this.Sa.TabIndex = 8;
+            this.Sa.TabIndex = 49;
             this.Sa.Text = "Sa";
-            this.Sa.UseVisualStyleBackColor = true;
+            this.Sa.UseVisualStyleBackColor = false;
             // 
             // Fr
             // 
             this.Fr.Appearance = System.Windows.Forms.Appearance.Button;
             this.Fr.AutoSize = true;
-            this.Fr.Location = new System.Drawing.Point(6, 95);
+            this.Fr.BackColor = System.Drawing.SystemColors.Control;
+            this.Fr.Location = new System.Drawing.Point(9, 95);
             this.Fr.Name = "Fr";
             this.Fr.Size = new System.Drawing.Size(31, 30);
-            this.Fr.TabIndex = 7;
+            this.Fr.TabIndex = 48;
             this.Fr.Text = "Fr";
-            this.Fr.UseVisualStyleBackColor = true;
-            // 
-            // Th
-            // 
-            this.Th.Appearance = System.Windows.Forms.Appearance.Button;
-            this.Th.AutoSize = true;
-            this.Th.Location = new System.Drawing.Point(177, 59);
-            this.Th.Name = "Th";
-            this.Th.Size = new System.Drawing.Size(35, 30);
-            this.Th.TabIndex = 6;
-            this.Th.Text = "Th";
-            this.Th.UseVisualStyleBackColor = true;
-            // 
-            // We
-            // 
-            this.We.Appearance = System.Windows.Forms.Appearance.Button;
-            this.We.AutoSize = true;
-            this.We.Location = new System.Drawing.Point(131, 60);
-            this.We.Name = "We";
-            this.We.Size = new System.Drawing.Size(40, 30);
-            this.We.TabIndex = 5;
-            this.We.Text = "We";
-            this.We.UseVisualStyleBackColor = true;
-            // 
-            // Tu
-            // 
-            this.Tu.Appearance = System.Windows.Forms.Appearance.Button;
-            this.Tu.AutoSize = true;
-            this.Tu.Location = new System.Drawing.Point(90, 60);
-            this.Tu.Name = "Tu";
-            this.Tu.Size = new System.Drawing.Size(35, 30);
-            this.Tu.TabIndex = 4;
-            this.Tu.Text = "Tu";
-            this.Tu.UseVisualStyleBackColor = true;
-            // 
-            // Mo
-            // 
-            this.Mo.Appearance = System.Windows.Forms.Appearance.Button;
-            this.Mo.AutoSize = true;
-            this.Mo.Location = new System.Drawing.Point(43, 59);
-            this.Mo.Name = "Mo";
-            this.Mo.Size = new System.Drawing.Size(41, 30);
-            this.Mo.TabIndex = 3;
-            this.Mo.Text = "Mo";
-            this.Mo.UseVisualStyleBackColor = true;
-            // 
-            // Su
-            // 
-            this.Su.Appearance = System.Windows.Forms.Appearance.Button;
-            this.Su.AutoSize = true;
-            this.Su.Location = new System.Drawing.Point(6, 59);
-            this.Su.Name = "Su";
-            this.Su.Size = new System.Drawing.Size(35, 30);
-            this.Su.TabIndex = 2;
-            this.Su.Text = "Su";
-            this.Su.UseVisualStyleBackColor = true;
+            this.Fr.UseVisualStyleBackColor = false;
             // 
             // comboTypeRepeat
             // 
             this.comboTypeRepeat.FormattingEnabled = true;
+            this.comboTypeRepeat.Items.AddRange(new object[] {
+            "days",
+            "weeks"});
             this.comboTypeRepeat.Location = new System.Drawing.Point(67, 26);
             this.comboTypeRepeat.Name = "comboTypeRepeat";
             this.comboTypeRepeat.Size = new System.Drawing.Size(177, 28);
             this.comboTypeRepeat.TabIndex = 1;
             this.comboTypeRepeat.SelectedIndexChanged += new System.EventHandler(this.comboTypeRepeat_SelectedIndexChanged);
+            // 
+            // Th
+            // 
+            this.Th.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Th.AutoSize = true;
+            this.Th.BackColor = System.Drawing.SystemColors.Control;
+            this.Th.Location = new System.Drawing.Point(180, 59);
+            this.Th.Name = "Th";
+            this.Th.Size = new System.Drawing.Size(35, 30);
+            this.Th.TabIndex = 47;
+            this.Th.Text = "Th";
+            this.Th.UseVisualStyleBackColor = false;
             // 
             // txtRepeatCount
             // 
@@ -284,6 +251,56 @@
             this.txtRepeatCount.Size = new System.Drawing.Size(55, 27);
             this.txtRepeatCount.TabIndex = 0;
             // 
+            // We
+            // 
+            this.We.Appearance = System.Windows.Forms.Appearance.Button;
+            this.We.AutoSize = true;
+            this.We.BackColor = System.Drawing.SystemColors.Control;
+            this.We.Location = new System.Drawing.Point(134, 61);
+            this.We.Name = "We";
+            this.We.Size = new System.Drawing.Size(40, 30);
+            this.We.TabIndex = 46;
+            this.We.Text = "We";
+            this.We.UseVisualStyleBackColor = false;
+            // 
+            // Su
+            // 
+            this.Su.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Su.AutoSize = true;
+            this.Su.BackColor = System.Drawing.SystemColors.Control;
+            this.Su.Checked = true;
+            this.Su.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Su.Location = new System.Drawing.Point(9, 59);
+            this.Su.Name = "Su";
+            this.Su.Size = new System.Drawing.Size(35, 30);
+            this.Su.TabIndex = 43;
+            this.Su.Text = "Su";
+            this.Su.UseVisualStyleBackColor = false;
+            // 
+            // Tu
+            // 
+            this.Tu.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Tu.AutoSize = true;
+            this.Tu.BackColor = System.Drawing.SystemColors.Control;
+            this.Tu.Location = new System.Drawing.Point(93, 61);
+            this.Tu.Name = "Tu";
+            this.Tu.Size = new System.Drawing.Size(35, 30);
+            this.Tu.TabIndex = 45;
+            this.Tu.Text = "Tu";
+            this.Tu.UseVisualStyleBackColor = false;
+            // 
+            // Mo
+            // 
+            this.Mo.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Mo.AutoSize = true;
+            this.Mo.BackColor = System.Drawing.SystemColors.Control;
+            this.Mo.Location = new System.Drawing.Point(46, 59);
+            this.Mo.Name = "Mo";
+            this.Mo.Size = new System.Drawing.Size(41, 30);
+            this.Mo.TabIndex = 44;
+            this.Mo.Text = "Mo";
+            this.Mo.UseVisualStyleBackColor = false;
+            // 
             // timeRemind
             // 
             this.timeRemind.Format = System.Windows.Forms.DateTimePickerFormat.Time;
@@ -291,7 +308,7 @@
             this.timeRemind.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.timeRemind.Name = "timeRemind";
             this.timeRemind.ShowUpDown = true;
-            this.timeRemind.Size = new System.Drawing.Size(92, 27);
+            this.timeRemind.Size = new System.Drawing.Size(119, 27);
             this.timeRemind.TabIndex = 40;
             // 
             // timeDueDate
@@ -301,7 +318,7 @@
             this.timeDueDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.timeDueDate.Name = "timeDueDate";
             this.timeDueDate.ShowUpDown = true;
-            this.timeDueDate.Size = new System.Drawing.Size(92, 27);
+            this.timeDueDate.Size = new System.Drawing.Size(119, 27);
             this.timeDueDate.TabIndex = 38;
             // 
             // dateRemind
@@ -387,20 +404,20 @@
         private ComboBox comboCategory;
         private Label label7;
         private GroupBox groupRepeat;
-        private CheckBox Su;
         private ComboBox comboTypeRepeat;
         private TextBox txtRepeatCount;
-        private CheckBox Sa;
-        private CheckBox Fr;
-        private CheckBox Th;
-        private CheckBox We;
-        private CheckBox Tu;
-        private CheckBox Mo;
         private DateTimePicker timeRemind;
         private DateTimePicker timeDueDate;
         private DateTimePicker dateRemind;
         private DateTimePicker dateDueDate;
         private Label label3;
         private Label label5;
+        private CheckBox Sa;
+        private CheckBox Fr;
+        private CheckBox Th;
+        private CheckBox We;
+        private CheckBox Su;
+        private CheckBox Tu;
+        private CheckBox Mo;
     }
 }

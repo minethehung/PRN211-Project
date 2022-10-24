@@ -62,9 +62,9 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbTitle.Location = new System.Drawing.Point(25, 24);
+            this.lbTitle.Location = new System.Drawing.Point(29, 32);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(52, 25);
+            this.lbTitle.Size = new System.Drawing.Size(63, 31);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "Title:";
             // 
@@ -72,9 +72,9 @@
             // 
             this.lbDescription.AutoSize = true;
             this.lbDescription.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbDescription.Location = new System.Drawing.Point(25, 72);
+            this.lbDescription.Location = new System.Drawing.Point(29, 96);
             this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(112, 25);
+            this.lbDescription.Size = new System.Drawing.Size(136, 31);
             this.lbDescription.TabIndex = 1;
             this.lbDescription.Text = "Description:";
             // 
@@ -82,9 +82,9 @@
             // 
             this.lbDueDate.AutoSize = true;
             this.lbDueDate.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbDueDate.Location = new System.Drawing.Point(25, 296);
+            this.lbDueDate.Location = new System.Drawing.Point(29, 395);
             this.lbDueDate.Name = "lbDueDate";
-            this.lbDueDate.Size = new System.Drawing.Size(92, 25);
+            this.lbDueDate.Size = new System.Drawing.Size(112, 31);
             this.lbDueDate.TabIndex = 2;
             this.lbDueDate.Text = "Due date:";
             // 
@@ -92,44 +92,40 @@
             // 
             this.lbRemind.AutoSize = true;
             this.lbRemind.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbRemind.Location = new System.Drawing.Point(25, 344);
+            this.lbRemind.Location = new System.Drawing.Point(29, 459);
             this.lbRemind.Name = "lbRemind";
-            this.lbRemind.Size = new System.Drawing.Size(84, 25);
+            this.lbRemind.Size = new System.Drawing.Size(103, 31);
             this.lbRemind.TabIndex = 4;
             this.lbRemind.Text = "Remind: ";
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(139, 26);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTitle.Location = new System.Drawing.Point(159, 35);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(354, 23);
+            this.txtTitle.Size = new System.Drawing.Size(404, 27);
             this.txtTitle.TabIndex = 0;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(139, 74);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDescription.Location = new System.Drawing.Point(159, 99);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(354, 102);
+            this.txtDescription.Size = new System.Drawing.Size(404, 135);
             this.txtDescription.TabIndex = 1;
             // 
             // dateDueDate
             // 
-            this.dateDueDate.Location = new System.Drawing.Point(139, 298);
-            this.dateDueDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateDueDate.Location = new System.Drawing.Point(159, 397);
             this.dateDueDate.Name = "dateDueDate";
-            this.dateDueDate.Size = new System.Drawing.Size(219, 23);
+            this.dateDueDate.Size = new System.Drawing.Size(250, 27);
             this.dateDueDate.TabIndex = 4;
             // 
             // btnCreate
             // 
             this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCreate.Location = new System.Drawing.Point(25, 517);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreate.Location = new System.Drawing.Point(29, 689);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(142, 29);
+            this.btnCreate.Size = new System.Drawing.Size(162, 39);
             this.btnCreate.TabIndex = 10;
             this.btnCreate.Text = "&Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -138,10 +134,9 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExit.Location = new System.Drawing.Point(351, 517);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Location = new System.Drawing.Point(401, 689);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(142, 29);
+            this.btnExit.Size = new System.Drawing.Size(162, 39);
             this.btnExit.TabIndex = 11;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -151,65 +146,66 @@
             // 
             this.lbCategory.AutoSize = true;
             this.lbCategory.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbCategory.Location = new System.Drawing.Point(25, 197);
+            this.lbCategory.Location = new System.Drawing.Point(29, 263);
             this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(97, 25);
+            this.lbCategory.Size = new System.Drawing.Size(117, 31);
             this.lbCategory.TabIndex = 17;
             this.lbCategory.Text = "Category: ";
             // 
             // cboCategory
             // 
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.ItemHeight = 15;
-            this.cboCategory.Location = new System.Drawing.Point(139, 202);
-            this.cboCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboCategory.ItemHeight = 20;
+            this.cboCategory.Location = new System.Drawing.Point(159, 269);
             this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(219, 23);
+            this.cboCategory.Size = new System.Drawing.Size(250, 28);
             this.cboCategory.TabIndex = 2;
             // 
             // dateRemind
             // 
-            this.dateRemind.Location = new System.Drawing.Point(139, 346);
+            this.dateRemind.Location = new System.Drawing.Point(159, 461);
+            this.dateRemind.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateRemind.Name = "dateRemind";
-            this.dateRemind.Size = new System.Drawing.Size(219, 23);
+            this.dateRemind.Size = new System.Drawing.Size(250, 27);
             this.dateRemind.TabIndex = 6;
             // 
             // timeDueDate
             // 
             this.timeDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timeDueDate.Location = new System.Drawing.Point(364, 298);
+            this.timeDueDate.Location = new System.Drawing.Point(416, 397);
+            this.timeDueDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.timeDueDate.Name = "timeDueDate";
             this.timeDueDate.ShowUpDown = true;
-            this.timeDueDate.Size = new System.Drawing.Size(81, 23);
+            this.timeDueDate.Size = new System.Drawing.Size(92, 27);
             this.timeDueDate.TabIndex = 5;
             // 
             // timeRemind
             // 
             this.timeRemind.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timeRemind.Location = new System.Drawing.Point(364, 346);
+            this.timeRemind.Location = new System.Drawing.Point(416, 461);
+            this.timeRemind.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.timeRemind.Name = "timeRemind";
             this.timeRemind.ShowUpDown = true;
-            this.timeRemind.Size = new System.Drawing.Size(81, 23);
+            this.timeRemind.Size = new System.Drawing.Size(92, 27);
             this.timeRemind.TabIndex = 7;
             // 
             // lbGroup
             // 
             this.lbGroup.AutoSize = true;
             this.lbGroup.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbGroup.Location = new System.Drawing.Point(25, 245);
+            this.lbGroup.Location = new System.Drawing.Point(29, 327);
             this.lbGroup.Name = "lbGroup";
-            this.lbGroup.Size = new System.Drawing.Size(69, 25);
+            this.lbGroup.Size = new System.Drawing.Size(83, 31);
             this.lbGroup.TabIndex = 17;
             this.lbGroup.Text = "Group:";
             // 
             // cboGroup
             // 
             this.cboGroup.FormattingEnabled = true;
-            this.cboGroup.ItemHeight = 15;
-            this.cboGroup.Location = new System.Drawing.Point(139, 250);
-            this.cboGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboGroup.ItemHeight = 20;
+            this.cboGroup.Location = new System.Drawing.Point(159, 333);
             this.cboGroup.Name = "cboGroup";
-            this.cboGroup.Size = new System.Drawing.Size(219, 23);
+            this.cboGroup.Size = new System.Drawing.Size(250, 28);
             this.cboGroup.TabIndex = 3;
             this.cboGroup.SelectedIndexChanged += new System.EventHandler(this.cboGroup_SelectedIndexChanged);
             // 
@@ -224,11 +220,9 @@
             this.groupRepeat.Controls.Add(this.ckbSu);
             this.groupRepeat.Controls.Add(this.cboRepeatType);
             this.groupRepeat.Controls.Add(this.txtRepeatCount);
-            this.groupRepeat.Location = new System.Drawing.Point(139, 396);
-            this.groupRepeat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupRepeat.Location = new System.Drawing.Point(159, 528);
             this.groupRepeat.Name = "groupRepeat";
-            this.groupRepeat.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupRepeat.Size = new System.Drawing.Size(219, 98);
+            this.groupRepeat.Size = new System.Drawing.Size(250, 131);
             this.groupRepeat.TabIndex = 36;
             this.groupRepeat.TabStop = false;
             this.groupRepeat.Text = "Every:";
@@ -237,10 +231,9 @@
             // 
             this.ckbSa.Appearance = System.Windows.Forms.Appearance.Button;
             this.ckbSa.AutoSize = true;
-            this.ckbSa.Location = new System.Drawing.Point(38, 70);
-            this.ckbSa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbSa.Location = new System.Drawing.Point(43, 93);
             this.ckbSa.Name = "ckbSa";
-            this.ckbSa.Size = new System.Drawing.Size(29, 25);
+            this.ckbSa.Size = new System.Drawing.Size(35, 30);
             this.ckbSa.TabIndex = 8;
             this.ckbSa.Text = "Sa";
             this.ckbSa.UseVisualStyleBackColor = true;
@@ -250,10 +243,9 @@
             // 
             this.ckbFr.Appearance = System.Windows.Forms.Appearance.Button;
             this.ckbFr.AutoSize = true;
-            this.ckbFr.Location = new System.Drawing.Point(5, 70);
-            this.ckbFr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbFr.Location = new System.Drawing.Point(6, 93);
             this.ckbFr.Name = "ckbFr";
-            this.ckbFr.Size = new System.Drawing.Size(27, 25);
+            this.ckbFr.Size = new System.Drawing.Size(31, 30);
             this.ckbFr.TabIndex = 7;
             this.ckbFr.Text = "Fr";
             this.ckbFr.UseVisualStyleBackColor = true;
@@ -263,10 +255,9 @@
             // 
             this.ckbTh.Appearance = System.Windows.Forms.Appearance.Button;
             this.ckbTh.AutoSize = true;
-            this.ckbTh.Location = new System.Drawing.Point(155, 43);
-            this.ckbTh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbTh.Location = new System.Drawing.Point(177, 57);
             this.ckbTh.Name = "ckbTh";
-            this.ckbTh.Size = new System.Drawing.Size(30, 25);
+            this.ckbTh.Size = new System.Drawing.Size(35, 30);
             this.ckbTh.TabIndex = 6;
             this.ckbTh.Text = "Th";
             this.ckbTh.UseVisualStyleBackColor = true;
@@ -276,10 +267,9 @@
             // 
             this.ckbWe.Appearance = System.Windows.Forms.Appearance.Button;
             this.ckbWe.AutoSize = true;
-            this.ckbWe.Location = new System.Drawing.Point(115, 44);
-            this.ckbWe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbWe.Location = new System.Drawing.Point(131, 59);
             this.ckbWe.Name = "ckbWe";
-            this.ckbWe.Size = new System.Drawing.Size(34, 25);
+            this.ckbWe.Size = new System.Drawing.Size(40, 30);
             this.ckbWe.TabIndex = 5;
             this.ckbWe.Text = "We";
             this.ckbWe.UseVisualStyleBackColor = true;
@@ -289,10 +279,9 @@
             // 
             this.ckbTu.Appearance = System.Windows.Forms.Appearance.Button;
             this.ckbTu.AutoSize = true;
-            this.ckbTu.Location = new System.Drawing.Point(79, 44);
-            this.ckbTu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbTu.Location = new System.Drawing.Point(90, 59);
             this.ckbTu.Name = "ckbTu";
-            this.ckbTu.Size = new System.Drawing.Size(30, 25);
+            this.ckbTu.Size = new System.Drawing.Size(35, 30);
             this.ckbTu.TabIndex = 4;
             this.ckbTu.Text = "Tu";
             this.ckbTu.UseVisualStyleBackColor = true;
@@ -303,10 +292,9 @@
             this.ckbMo.Appearance = System.Windows.Forms.Appearance.Button;
             this.ckbMo.AutoSize = true;
             this.ckbMo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ckbMo.Location = new System.Drawing.Point(38, 43);
-            this.ckbMo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbMo.Location = new System.Drawing.Point(43, 57);
             this.ckbMo.Name = "ckbMo";
-            this.ckbMo.Size = new System.Drawing.Size(35, 25);
+            this.ckbMo.Size = new System.Drawing.Size(41, 30);
             this.ckbMo.TabIndex = 3;
             this.ckbMo.Text = "Mo";
             this.ckbMo.UseVisualStyleBackColor = false;
@@ -317,10 +305,9 @@
             this.ckbSu.Appearance = System.Windows.Forms.Appearance.Button;
             this.ckbSu.AutoSize = true;
             this.ckbSu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ckbSu.Location = new System.Drawing.Point(5, 43);
-            this.ckbSu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ckbSu.Location = new System.Drawing.Point(6, 57);
             this.ckbSu.Name = "ckbSu";
-            this.ckbSu.Size = new System.Drawing.Size(30, 25);
+            this.ckbSu.Size = new System.Drawing.Size(35, 30);
             this.ckbSu.TabIndex = 2;
             this.ckbSu.Text = "Su";
             this.ckbSu.UseVisualStyleBackColor = false;
@@ -329,37 +316,35 @@
             // cboRepeatType
             // 
             this.cboRepeatType.FormattingEnabled = true;
-            this.cboRepeatType.Location = new System.Drawing.Point(59, 20);
-            this.cboRepeatType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboRepeatType.Location = new System.Drawing.Point(67, 27);
             this.cboRepeatType.Name = "cboRepeatType";
-            this.cboRepeatType.Size = new System.Drawing.Size(155, 23);
+            this.cboRepeatType.Size = new System.Drawing.Size(177, 28);
             this.cboRepeatType.TabIndex = 9;
             this.cboRepeatType.SelectedIndexChanged += new System.EventHandler(this.cboRepeatType_SelectedIndexChanged);
             // 
             // txtRepeatCount
             // 
-            this.txtRepeatCount.Location = new System.Drawing.Point(5, 20);
-            this.txtRepeatCount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRepeatCount.Location = new System.Drawing.Point(6, 27);
             this.txtRepeatCount.Name = "txtRepeatCount";
-            this.txtRepeatCount.Size = new System.Drawing.Size(49, 23);
+            this.txtRepeatCount.Size = new System.Drawing.Size(55, 27);
             this.txtRepeatCount.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(25, 396);
+            this.label6.Location = new System.Drawing.Point(29, 528);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 25);
+            this.label6.Size = new System.Drawing.Size(96, 31);
             this.label6.TabIndex = 35;
             this.label6.Text = "Repeat: ";
             // 
             // Create
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(520, 568);
+            this.ClientSize = new System.Drawing.Size(594, 757);
             this.Controls.Add(this.groupRepeat);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.timeRemind);
@@ -378,7 +363,6 @@
             this.Controls.Add(this.lbDueDate);
             this.Controls.Add(this.lbDescription);
             this.Controls.Add(this.lbTitle);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Create";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create task";
