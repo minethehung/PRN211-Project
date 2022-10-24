@@ -195,8 +195,10 @@ namespace Group9_Project
                 DateTime startDate = DateTime.Now;
                 string state = "Incomplete";
                 string repeat = GetRepeatString();
-                DateTime dueDate = ConverToDateTime(dateDueDate.Text, timeDueDate.Text);
-                DateTime remind = ConverToDateTime(dateRemind.Text, timeRemind.Text);
+                //DateTime dueDate = ConverToDateTime(dateDueDate.Text, timeDueDate.Text);
+                //DateTime remind = ConverToDateTime(dateRemind.Text, timeRemind.Text);
+                DateTime dueDate = dateDueDate.Value.Date + timeDueDate.Value.TimeOfDay;
+                DateTime remind = dateRemind.Value.Date.Add(timeRemind.Value.TimeOfDay);
                 string username = LoginUser.Username;
 
                 TaskObject task = new TaskObject()
