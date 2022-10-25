@@ -64,10 +64,6 @@ namespace Group9_Project
                 {
                     taskGroups = new List<TaskGroupObject>();
                 }
-                taskGroups = taskGroups.Append(new TaskGroupObject
-                {
-                    Name = "Add new group"
-                });
                 BindingSource taskGroupSource = new BindingSource();
                 taskGroupSource.DataSource = taskGroups;
 
@@ -76,7 +72,7 @@ namespace Group9_Project
                 cboGroup.DisplayMember = "Name";
                 if (addNew)
                 {
-                    taskGroupSource.Position = taskGroupSource.Count - 2;
+                    taskGroupSource.Position = taskGroupSource.Count - 1;
                 }
             }
             catch (Exception ex)
@@ -195,9 +191,7 @@ namespace Group9_Project
                 DateTime startDate = DateTime.Now;
                 string state = "Incomplete";
                 string repeat = GetRepeatString();
-                //DateTime dueDate = ConverToDateTime(dateDueDate.Text, timeDueDate.Text);
-                //DateTime remind = ConverToDateTime(dateRemind.Text, timeRemind.Text);
-                DateTime dueDate = dateDueDate.Value.Date + timeDueDate.Value.TimeOfDay;
+                DateTime dueDate = dateDueDate.Value.Date.Add(timeDueDate.Value.TimeOfDay);
                 DateTime remind = dateRemind.Value.Date.Add(timeRemind.Value.TimeOfDay);
                 string username = LoginUser.Username;
 
@@ -275,20 +269,16 @@ namespace Group9_Project
             ckbSa.BackColor = ckbSa.Checked ? SystemColors.MenuHighlight : SystemColors.ButtonHighlight;
         }
 
-        private void cboGroup_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnAddGroup_Click(object sender, EventArgs e)
         {
-            string selectedGroup = cboGroup.Text;
-            if (selectedGroup.Equals("Add new group"))
+            frmAddGroup frmAddGroup = new frmAddGroup()
             {
-                frmAddGroup frmAddGroup = new frmAddGroup()
-                {
-                    LoginUser = this.LoginUser,
-                    TaskGroupRepository = this.taskGroupRepository
-                };
-                if (frmAddGroup.ShowDialog() == DialogResult.OK)
-                {
-                    cboTaskGroup_LoadDataSource(true);
-                }
+                LoginUser = this.LoginUser,
+                TaskGroupRepository = this.taskGroupRepository
+            };
+            if (frmAddGroup.ShowDialog() == DialogResult.OK)
+            {
+                cboTaskGroup_LoadDataSource(true);
             }
         }
     }
