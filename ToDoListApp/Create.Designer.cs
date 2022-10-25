@@ -130,6 +130,7 @@
             this.dateDueDate.Name = "dateDueDate";
             this.dateDueDate.Size = new System.Drawing.Size(219, 23);
             this.dateDueDate.TabIndex = 4;
+            this.dateDueDate.ValueChanged += new System.EventHandler(this.dateDueDate_ValueChanged);
             // 
             // btnCreate
             // 
@@ -185,6 +186,7 @@
             this.dateRemind.Name = "dateRemind";
             this.dateRemind.Size = new System.Drawing.Size(219, 23);
             this.dateRemind.TabIndex = 6;
+            this.dateRemind.ValueChanged += new System.EventHandler(this.dateRemind_ValueChanged);
             // 
             // timeDueDate
             // 
@@ -194,6 +196,7 @@
             this.timeDueDate.ShowUpDown = true;
             this.timeDueDate.Size = new System.Drawing.Size(81, 23);
             this.timeDueDate.TabIndex = 5;
+            this.timeDueDate.ValueChanged += new System.EventHandler(this.timeDueDate_ValueChanged);
             // 
             // timeRemind
             // 
@@ -203,6 +206,7 @@
             this.timeRemind.ShowUpDown = true;
             this.timeRemind.Size = new System.Drawing.Size(81, 23);
             this.timeRemind.TabIndex = 7;
+            this.timeRemind.ValueChanged += new System.EventHandler(this.timeRemind_ValueChanged);
             // 
             // lbGroup
             // 

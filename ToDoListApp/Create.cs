@@ -120,9 +120,9 @@ namespace Group9_Project
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(
-                "Do you want to cancel?", 
+                "Do you want to cancel?",
                 "Notification",
-                MessageBoxButtons.YesNo, 
+                MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Close();
@@ -215,13 +215,32 @@ namespace Group9_Project
                     StartDate = startDate,
                     State = state
                 };
-                taskRepository.InsertTask(task);
-                MessageBox.Show(
-                    "Created task successfully!",
-                    "Create task",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                Close();
+                if (!CheckValidFutureDateTime(DateTime.Now, dueDate))
+                {
+                    MessageBox.Show(
+                        "Invalid due date!",
+                        "Notification",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+                else if (!CheckValidFutureDateTime(remind, dueDate))
+                {
+                    MessageBox.Show(
+                        "Invalid remind date!",
+                        "Notification",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    taskRepository.InsertTask(task);
+                    MessageBox.Show(
+                        "Created task successfully!",
+                        "Create task",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    Close();
+                }
             }
             catch (Exception ex)
             {
@@ -287,6 +306,65 @@ namespace Group9_Project
             if (frmAddGroup.ShowDialog() == DialogResult.OK)
             {
                 cboTaskGroup_LoadDataSource(true);
+            }
+        }
+        private bool CheckValidFutureDateTime(DateTime dt1, DateTime dt2)
+        {
+            return dt2.CompareTo(dt1) >= 0;
+        }
+        private void dateDueDate_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dueDate = dateDueDate.Value;
+            if (!CheckValidFutureDateTime(
+                new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day),
+                dueDate))
+            {
+                MessageBox.Show(
+                    "Invalid due date!",
+                    "Notification",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void timeDueDate_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dueDateTime = dateDueDate.Value.Date.Add(timeDueDate.Value.TimeOfDay);
+            if (!CheckValidFutureDateTime(DateTime.Now, dueDateTime))
+            {
+                MessageBox.Show(
+                    "Invalid due date!",
+                    "Notification",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dateRemind_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dueDate = dateDueDate.Value;
+            DateTime remindDate = dateRemind.Value;
+            if (!CheckValidFutureDateTime(remindDate, dueDate))
+            {
+                MessageBox.Show(
+                    "Invalid remind date!",
+                    "Notification",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void timeRemind_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime remindDateTime = dateRemind.Value.Date.Add(timeRemind.Value.TimeOfDay);
+            DateTime dueDateTime = dateDueDate.Value.Date.Add(timeDueDate.Value.TimeOfDay);
+            if (!CheckValidFutureDateTime(remindDateTime, dueDateTime))
+            {
+                MessageBox.Show(
+                    "Invalid remind date!",
+                    "Notification",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
         }
     }
