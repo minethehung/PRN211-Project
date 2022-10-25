@@ -98,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(453, 290);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
@@ -105,6 +106,7 @@
             this.Controls.Add(this.lbGroupName);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtGroupName);
+            this.MaximizeBox = false;
             this.Name = "frmAddGroup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add new group";

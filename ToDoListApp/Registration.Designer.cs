@@ -56,9 +56,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(35, 86);
+            this.label1.Location = new System.Drawing.Point(31, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 32);
+            this.label1.Size = new System.Drawing.Size(107, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "User Name";
             // 
@@ -68,9 +68,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(35, 131);
+            this.label2.Location = new System.Drawing.Point(31, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 32);
+            this.label2.Size = new System.Drawing.Size(91, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
@@ -80,9 +80,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(35, 216);
+            this.label3.Location = new System.Drawing.Point(31, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 32);
+            this.label3.Size = new System.Drawing.Size(100, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Full Name";
             // 
@@ -92,31 +92,34 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(35, 259);
+            this.label4.Location = new System.Drawing.Point(31, 194);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 32);
+            this.label4.Size = new System.Drawing.Size(126, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Date Of Birth";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(202, 86);
+            this.txtUsername.Location = new System.Drawing.Point(177, 64);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(308, 27);
+            this.txtUsername.Size = new System.Drawing.Size(270, 23);
             this.txtUsername.TabIndex = 4;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(202, 131);
+            this.txtPassword.Location = new System.Drawing.Point(177, 98);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(308, 27);
+            this.txtPassword.Size = new System.Drawing.Size(270, 23);
             this.txtPassword.TabIndex = 5;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(202, 216);
+            this.txtName.Location = new System.Drawing.Point(177, 162);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(308, 27);
+            this.txtName.Size = new System.Drawing.Size(270, 23);
             this.txtName.TabIndex = 6;
             // 
             // label5
@@ -125,17 +128,18 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(146, 0);
+            this.label5.Location = new System.Drawing.Point(128, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(255, 54);
+            this.label5.Size = new System.Drawing.Size(203, 45);
             this.label5.TabIndex = 8;
             this.label5.Text = "Registration";
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(169, 409);
+            this.btnRegister.Location = new System.Drawing.Point(148, 307);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(226, 29);
+            this.btnRegister.Size = new System.Drawing.Size(198, 22);
             this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -143,9 +147,10 @@
             // 
             // txtConfirm
             // 
-            this.txtConfirm.Location = new System.Drawing.Point(202, 176);
+            this.txtConfirm.Location = new System.Drawing.Point(177, 132);
+            this.txtConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.Size = new System.Drawing.Size(308, 27);
+            this.txtConfirm.Size = new System.Drawing.Size(270, 23);
             this.txtConfirm.TabIndex = 11;
             // 
             // label6
@@ -154,17 +159,18 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(35, 176);
+            this.label6.Location = new System.Drawing.Point(31, 132);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 32);
+            this.label6.Size = new System.Drawing.Size(82, 25);
             this.label6.TabIndex = 10;
             this.label6.Text = "Confirm";
             // 
             // dateTimeBirthDay
             // 
-            this.dateTimeBirthDay.Location = new System.Drawing.Point(202, 259);
+            this.dateTimeBirthDay.Location = new System.Drawing.Point(177, 194);
+            this.dateTimeBirthDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimeBirthDay.Name = "dateTimeBirthDay";
-            this.dateTimeBirthDay.Size = new System.Drawing.Size(308, 27);
+            this.dateTimeBirthDay.Size = new System.Drawing.Size(270, 23);
             this.dateTimeBirthDay.TabIndex = 12;
             this.dateTimeBirthDay.ValueChanged += new System.EventHandler(this.dateTimeBirthDay_ValueChanged);
             // 
@@ -174,26 +180,28 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Yellow;
-            this.label7.Location = new System.Drawing.Point(-146, 219);
+            this.label7.Location = new System.Drawing.Point(-128, 164);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 32);
+            this.label7.Size = new System.Drawing.Size(69, 25);
             this.label7.TabIndex = 13;
             this.label7.Text = "Avatar";
             // 
             // pBImage
             // 
-            this.pBImage.Location = new System.Drawing.Point(385, 292);
+            this.pBImage.Location = new System.Drawing.Point(337, 219);
+            this.pBImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pBImage.Name = "pBImage";
-            this.pBImage.Size = new System.Drawing.Size(125, 62);
+            this.pBImage.Size = new System.Drawing.Size(109, 46);
             this.pBImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBImage.TabIndex = 14;
             this.pBImage.TabStop = false;
             // 
             // btnAddImg
             // 
-            this.btnAddImg.Location = new System.Drawing.Point(202, 303);
+            this.btnAddImg.Location = new System.Drawing.Point(177, 227);
+            this.btnAddImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddImg.Name = "btnAddImg";
-            this.btnAddImg.Size = new System.Drawing.Size(94, 29);
+            this.btnAddImg.Size = new System.Drawing.Size(82, 22);
             this.btnAddImg.TabIndex = 15;
             this.btnAddImg.Text = "Add";
             this.btnAddImg.UseVisualStyleBackColor = true;
@@ -201,9 +209,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(581, 409);
+            this.btnExit.Location = new System.Drawing.Point(508, 307);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(94, 29);
+            this.btnExit.Size = new System.Drawing.Size(82, 22);
             this.btnExit.TabIndex = 16;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -225,25 +234,28 @@
             this.panel1.Controls.Add(this.txtConfirm);
             this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(82, 12);
+            this.panel1.Location = new System.Drawing.Point(72, 9);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(533, 364);
+            this.panel1.Size = new System.Drawing.Size(466, 273);
             this.panel1.TabIndex = 17;
             // 
             // Registration
             // 
             this.AcceptButton = this.btnRegister;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(700, 450);
+            this.ClientSize = new System.Drawing.Size(612, 338);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnRegister);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Registration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Registration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBImage)).EndInit();

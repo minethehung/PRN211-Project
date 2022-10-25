@@ -119,7 +119,14 @@ namespace Group9_Project
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show(
+                "Do you want to cancel?", 
+                "Notification",
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Close();
+            }
         }
         private string CheckEmptyString(string s)
         {
@@ -214,6 +221,7 @@ namespace Group9_Project
                     "Create task",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                Close();
             }
             catch (Exception ex)
             {
