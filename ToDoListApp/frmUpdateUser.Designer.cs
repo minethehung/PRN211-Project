@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdateUser));
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAddImg = new System.Windows.Forms.Button();
             this.pBImage = new System.Windows.Forms.PictureBox();
@@ -73,6 +74,7 @@
             // 
             // pBImage
             // 
+            this.pBImage.BackColor = System.Drawing.Color.Transparent;
             this.pBImage.Location = new System.Drawing.Point(23, 54);
             this.pBImage.Name = "pBImage";
             this.pBImage.Size = new System.Drawing.Size(138, 101);
@@ -96,19 +98,21 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(282, 393);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(226, 29);
             this.btnUpdate.TabIndex = 25;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label5.Location = new System.Drawing.Point(242, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(321, 54);
@@ -132,20 +136,24 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label4.Location = new System.Drawing.Point(299, 138);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 31);
+            this.label4.Size = new System.Drawing.Size(152, 31);
             this.label4.TabIndex = 20;
             this.label4.Text = "Date Of Birth";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label3.Location = new System.Drawing.Point(299, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 31);
+            this.label3.Size = new System.Drawing.Size(122, 31);
             this.label3.TabIndex = 19;
             this.label3.Text = "Full Name";
             // 
@@ -218,6 +226,7 @@
             // 
             // gBPassword
             // 
+            this.gBPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.gBPassword.Controls.Add(this.label1);
             this.gBPassword.Controls.Add(this.txtOldPassword);
             this.gBPassword.Controls.Add(this.label2);
@@ -237,6 +246,9 @@
             this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.gBPassword);
@@ -250,6 +262,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.MaximizeBox = false;
             this.Name = "frmUpdateUser";
             this.Text = "Update Account";
             this.Load += new System.EventHandler(this.frmUpdateUser_Load);
