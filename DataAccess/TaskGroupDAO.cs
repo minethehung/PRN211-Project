@@ -155,5 +155,55 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
+        public TaskGroupObject GetTaskGroupById(int id)
+        {
+            TaskGroupObject taskGroubObj = new TaskGroupObject();
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            SqlDataReader reader = null;
+            try
+            {
+                con = DbHelper.getConnection();
+                if (con != null)
+                {
+                    con.Open();
+                    string sql = "SELECT [task_group_id], [name], [description], [username] " +
+                        "FROM [task_group] " +
+                        "WHERE [task_group_id] = @Id ";
+                    cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            taskGroubObj = new TaskGroupObject
+                            {
+                                Id = reader.GetInt32("task_group_id"),
+                                Name = reader.GetString("name"),
+                                Description = reader.GetString("description"),
+                                Username = reader.GetString("username")
+                            };
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+                if (con != null)
+                {
+                    con.Close();
+                }
+            }
+            return taskGroubObj;
+        }
     }
 }

@@ -14,5 +14,9 @@ namespace DataAccess.Repository
         public int GetTaskGroupId(string username, string groupName) => TaskGroupDAO.Instance.GetTaskGroupId(username, groupName);
         public TaskGroupObject GetTaskGroupByUserAndName(string username, string name) => TaskGroupDAO.Instance.GetTaskGroupByUserAndName(username, name);
         public void InsertTaskGroup(TaskGroupObject taskGroup) => TaskGroupDAO.Instance.InsertTaskGroup(taskGroup);
+        public TaskGroupObject GetTaskGroupById(int id)
+        {
+            return TaskGroupDAO.Instance.GetTaskGroupById(id);
+        }
     }
 }

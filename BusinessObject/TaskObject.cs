@@ -34,5 +34,10 @@
         public int GroupId { get; set; }
         public string Username { get; set; }
         public string State { get; set; }
+
+        public string getTask()
+        {
+            return TaskId + "-" + Title + "-" + Description + "-" + DueDate + "-" + CategoryId + "-" + Repeat + "-" + StartDate + "-" + GroupId + "-" + Username + "-" + State;
+        }
     }
 }

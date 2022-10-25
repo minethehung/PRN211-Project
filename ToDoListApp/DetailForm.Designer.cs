@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboImportant = new System.Windows.Forms.ComboBox();
+            this.comboGroup = new System.Windows.Forms.ComboBox();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtDes = new System.Windows.Forms.TextBox();
@@ -56,16 +56,25 @@
             this.dateDueDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.group = new System.Windows.Forms.GroupBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtDesGroup = new System.Windows.Forms.TextBox();
+            this.txtTitleGroup = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnAddGroup = new System.Windows.Forms.Button();
             this.groupRepeat.SuspendLayout();
+            this.group.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboImportant
+            // comboGroup
             // 
-            this.comboImportant.FormattingEnabled = true;
-            this.comboImportant.Location = new System.Drawing.Point(205, 269);
-            this.comboImportant.Name = "comboImportant";
-            this.comboImportant.Size = new System.Drawing.Size(250, 28);
-            this.comboImportant.TabIndex = 29;
+            this.comboGroup.FormattingEnabled = true;
+            this.comboGroup.Location = new System.Drawing.Point(205, 269);
+            this.comboGroup.Name = "comboGroup";
+            this.comboGroup.Size = new System.Drawing.Size(250, 28);
+            this.comboGroup.TabIndex = 29;
             // 
             // btnHome
             // 
@@ -207,6 +216,7 @@
             this.Sa.TabIndex = 49;
             this.Sa.Text = "Sa";
             this.Sa.UseVisualStyleBackColor = false;
+            this.Sa.CheckedChanged += new System.EventHandler(this.Sa_CheckedChanged);
             // 
             // Fr
             // 
@@ -219,6 +229,7 @@
             this.Fr.TabIndex = 48;
             this.Fr.Text = "Fr";
             this.Fr.UseVisualStyleBackColor = false;
+            this.Fr.CheckedChanged += new System.EventHandler(this.Fr_CheckedChanged);
             // 
             // comboTypeRepeat
             // 
@@ -243,6 +254,7 @@
             this.Th.TabIndex = 47;
             this.Th.Text = "Th";
             this.Th.UseVisualStyleBackColor = false;
+            this.Th.CheckedChanged += new System.EventHandler(this.Th_CheckedChanged);
             // 
             // txtRepeatCount
             // 
@@ -262,20 +274,20 @@
             this.We.TabIndex = 46;
             this.We.Text = "We";
             this.We.UseVisualStyleBackColor = false;
+            this.We.CheckedChanged += new System.EventHandler(this.We_CheckedChanged);
             // 
             // Su
             // 
             this.Su.Appearance = System.Windows.Forms.Appearance.Button;
             this.Su.AutoSize = true;
             this.Su.BackColor = System.Drawing.SystemColors.Control;
-            this.Su.Checked = true;
-            this.Su.CheckState = System.Windows.Forms.CheckState.Checked;
             this.Su.Location = new System.Drawing.Point(9, 59);
             this.Su.Name = "Su";
             this.Su.Size = new System.Drawing.Size(35, 30);
             this.Su.TabIndex = 43;
             this.Su.Text = "Su";
             this.Su.UseVisualStyleBackColor = false;
+            this.Su.CheckedChanged += new System.EventHandler(this.Su_CheckedChanged);
             // 
             // Tu
             // 
@@ -288,6 +300,7 @@
             this.Tu.TabIndex = 45;
             this.Tu.Text = "Tu";
             this.Tu.UseVisualStyleBackColor = false;
+            this.Tu.CheckedChanged += new System.EventHandler(this.Tu_CheckedChanged);
             // 
             // Mo
             // 
@@ -300,6 +313,7 @@
             this.Mo.TabIndex = 44;
             this.Mo.Text = "Mo";
             this.Mo.UseVisualStyleBackColor = false;
+            this.Mo.CheckedChanged += new System.EventHandler(this.Mo_CheckedChanged);
             // 
             // timeRemind
             // 
@@ -356,11 +370,91 @@
             this.label5.TabIndex = 42;
             this.label5.Text = "Remind: ";
             // 
+            // group
+            // 
+            this.group.Controls.Add(this.btnCancel);
+            this.group.Controls.Add(this.btnSave);
+            this.group.Controls.Add(this.txtDesGroup);
+            this.group.Controls.Add(this.txtTitleGroup);
+            this.group.Controls.Add(this.label9);
+            this.group.Controls.Add(this.label8);
+            this.group.Location = new System.Drawing.Point(619, 269);
+            this.group.Name = "group";
+            this.group.Size = new System.Drawing.Size(396, 195);
+            this.group.TabIndex = 43;
+            this.group.TabStop = false;
+            this.group.Text = "New Group: ";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(125, 160);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(94, 29);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(261, 160);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(94, 29);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            // 
+            // txtDesGroup
+            // 
+            this.txtDesGroup.Location = new System.Drawing.Point(105, 67);
+            this.txtDesGroup.Multiline = true;
+            this.txtDesGroup.Name = "txtDesGroup";
+            this.txtDesGroup.Size = new System.Drawing.Size(285, 73);
+            this.txtDesGroup.TabIndex = 3;
+            // 
+            // txtTitleGroup
+            // 
+            this.txtTitleGroup.Location = new System.Drawing.Point(105, 34);
+            this.txtTitleGroup.Name = "txtTitleGroup";
+            this.txtTitleGroup.Size = new System.Drawing.Size(285, 27);
+            this.txtTitleGroup.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 70);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(92, 20);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Description: ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 37);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 20);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Title: ";
+            // 
+            // btnAddGroup
+            // 
+            this.btnAddGroup.Location = new System.Drawing.Point(487, 269);
+            this.btnAddGroup.Name = "btnAddGroup";
+            this.btnAddGroup.Size = new System.Drawing.Size(94, 29);
+            this.btnAddGroup.TabIndex = 44;
+            this.btnAddGroup.Text = "Add";
+            this.btnAddGroup.UseVisualStyleBackColor = true;
+            this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
+            // 
             // DetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 666);
+            this.ClientSize = new System.Drawing.Size(1027, 666);
+            this.Controls.Add(this.btnAddGroup);
+            this.Controls.Add(this.group);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.timeRemind);
@@ -371,7 +465,7 @@
             this.Controls.Add(this.comboCategory);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnFinish);
-            this.Controls.Add(this.comboImportant);
+            this.Controls.Add(this.comboGroup);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtDes);
@@ -385,13 +479,15 @@
             this.Load += new System.EventHandler(this.Detail_Load);
             this.groupRepeat.ResumeLayout(false);
             this.groupRepeat.PerformLayout();
+            this.group.ResumeLayout(false);
+            this.group.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private ComboBox comboImportant;
+        private ComboBox comboGroup;
         private Button btnHome;
         private Button btnUpdate;
         private TextBox txtDes;
@@ -419,5 +515,13 @@
         private CheckBox Su;
         private CheckBox Tu;
         private CheckBox Mo;
+        private GroupBox group;
+        private Button btnAddGroup;
+        private Button btnCancel;
+        private Button btnSave;
+        private TextBox txtDesGroup;
+        private TextBox txtTitleGroup;
+        private Label label9;
+        private Label label8;
     }
 }
