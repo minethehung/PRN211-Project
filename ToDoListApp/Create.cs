@@ -157,34 +157,34 @@ namespace Group9_Project
             result += "/";
             if (ckbMo.Checked)
             {
-                result += "Mo, ";
+                result += "Mo,";
             }
             if (ckbTu.Checked)
             {
-                result += "Tu, ";
+                result += "Tu,";
             }
             if (ckbWe.Checked)
             {
-                result += "We, ";
+                result += "We,";
             }
             if (ckbTh.Checked)
             {
-                result += "Th, ";
+                result += "Th,";
             }
             if (ckbFr.Checked)
             {
-                result += "Fr, ";
+                result += "Fr,";
             }
             if (ckbSa.Checked)
             {
-                result += "Sa, ";
+                result += "Sa,";
             }
             if (ckbSu.Checked)
             {
-                result += "Su, ";
+                result += "Su,";
             }
 
-            return result.Substring(0, result.Length - 2);
+            return result.Substring(0, result.Length - 1);
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
