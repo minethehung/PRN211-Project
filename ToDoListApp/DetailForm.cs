@@ -69,6 +69,9 @@ namespace Group9_Project
                 if (res == DialogResult.OK)
                 {
                     //Code save Here
+                    TaskObject obj = getTask();
+                    repository.UpdateTask(obj);
+                    this.Detail_Load(sender, e);
                     this.Close();
                 }
                 if (res == DialogResult.Cancel)
@@ -170,50 +173,54 @@ namespace Group9_Project
             else
             {
                 comboTypeRepeat.SelectedIndex = 1;
-                string[] dayOfWeek = repeatTime[1].Split(",");
-                System.Diagnostics.Debug.WriteLine("DCM: " + repeatTime[1]);
-                for (int i = 0; i < dayOfWeek.Length; i++)
+                if(repeatTime.Length > 1)
                 {
-                    System.Diagnostics.Debug.WriteLine("Ma may: " + dayOfWeek[i]);
-                }
-                for (int i = 0; i < dayOfWeek.Length; i++)
-                {
+                    string[] dayOfWeek = repeatTime[1].Split(",");
+                    System.Diagnostics.Debug.WriteLine("DCM: " + repeatTime[1]);
+                    for (int i = 0; i < dayOfWeek.Length; i++)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Ma may: " + dayOfWeek[i]);
+                    }
+                    for (int i = 0; i < dayOfWeek.Length; i++)
+                    {
 
-                    if (dayOfWeek[i].Trim() == "Mo")
-                    {
-                        Mo.Checked = true;
-                        //Mo.BackColor = SystemColors.MenuHighlight;
+                        if (dayOfWeek[i].Trim() == "Mo")
+                        {
+                            Mo.Checked = true;
+                            //Mo.BackColor = SystemColors.MenuHighlight;
+                        }
+                        if (dayOfWeek[i].Trim() == "Tu")
+                        {
+                            Tu.Checked = true;
+                            //Tu.BackColor = SystemColors.MenuHighlight;
+                        }
+                        if (dayOfWeek[i].Trim() == "We")
+                        {
+                            We.Checked = true;
+                            //We.BackColor = SystemColors.MenuHighlight;
+                        }
+                        if (dayOfWeek[i].Trim() == "Th")
+                        {
+                            Th.Checked = true;
+                            //Th.BackColor = SystemColors.MenuHighlight;
+                        }
+                        if (dayOfWeek[i].Trim() == "Fr")
+                        {
+                            Fr.Checked = true;
+                            //Fr.BackColor = SystemColors.MenuHighlight;
+                        }
+                        if (dayOfWeek[i].Trim() == "Sa")
+                        {
+                            Sa.Checked = true;
+                            //Sa.BackColor = SystemColors.MenuHighlight;
+                        }
+                        if (dayOfWeek[i].Trim() == "Su")
+                        {
+                            Su.Checked = true;
+                            //Su.BackColor = SystemColors.MenuHighlight;
+                        }
                     }
-                    if (dayOfWeek[i].Trim() == "Tu")
-                    {
-                        Tu.Checked = true;
-                        //Tu.BackColor = SystemColors.MenuHighlight;
-                    }
-                    if (dayOfWeek[i].Trim() == "We")
-                    {
-                        We.Checked = true;
-                        //We.BackColor = SystemColors.MenuHighlight;
-                    }
-                    if (dayOfWeek[i].Trim() == "Th")
-                    {
-                        Th.Checked = true;
-                        //Th.BackColor = SystemColors.MenuHighlight;
-                    }
-                    if (dayOfWeek[i].Trim() == "Fr")
-                    {
-                        Fr.Checked = true;
-                        //Fr.BackColor = SystemColors.MenuHighlight;
-                    }
-                    if (dayOfWeek[i].Trim() == "Sa")
-                    {
-                        Sa.Checked = true;
-                        //Sa.BackColor = SystemColors.MenuHighlight;
-                    }
-                    if (dayOfWeek[i].Trim() == "Su")
-                    {
-                        Su.Checked = true;
-                        //Su.BackColor = SystemColors.MenuHighlight;
-                    }
+                
                 }
             }
 
@@ -250,7 +257,7 @@ namespace Group9_Project
             {
                 //Code save here
                 TaskObject obj = getTask();
-                MessageBox.Show(obj.getTask());
+                repository.UpdateTask(obj);
                 this.Detail_Load(sender, e);
             }
             if (res == DialogResult.Cancel)
@@ -391,6 +398,7 @@ namespace Group9_Project
             int taskGroupId = taskGroupRepository.GetTaskGroupId(UUser.Username, group);
             TaskObject obj = new TaskObject()
             {
+                TaskId = taskId,
                 Title = title,
                 Description = description,
                 CategoryId = taskCate,

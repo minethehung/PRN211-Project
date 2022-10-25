@@ -201,6 +201,42 @@ namespace DataAccess
             }
             return task;
         }
+        public void UpdateTask(TaskObject obj)
+        {
+
+            SqlConnection connection = null;
+            SqlCommand command = null;
+
+            try
+            {
+                connection = DbHelper.getConnection();
+                connection.Open();
+                string SQLSelect = "UPDATE tasks " +
+                    "set [title] = @Title, [description] = @Description, [due_date] = @Due, [category_id] = @Cate, [repeat] = @Repeat, [remind_time] = @Remind , group_id = @Group " +
+                    "where [task_id] = @Id";
+                command = new SqlCommand(SQLSelect, connection);
+                command.Parameters.AddWithValue("@Title", obj.Title);
+                command.Parameters.AddWithValue("@Description", obj.Description);
+                command.Parameters.AddWithValue("@Due", obj.DueDate);
+                command.Parameters.AddWithValue("@Cate", obj.CategoryId);
+                command.Parameters.AddWithValue("@Repeat", obj.Repeat);
+                command.Parameters.AddWithValue("@Remind", obj.Remind);
+                command.Parameters.AddWithValue("@Group", obj.GroupId);
+                command.Parameters.AddWithValue("@Id", obj.TaskId);
+                int re = command.ExecuteNonQuery();
+                System.Diagnostics.Debug.WriteLine("Haiz: " + obj.getTask());
+                System.Diagnostics.Debug.WriteLine("Fuck: " + re);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
 
     }
 }

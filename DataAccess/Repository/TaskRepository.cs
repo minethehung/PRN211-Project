@@ -29,7 +29,7 @@ namespace DataAccess.Repository
 
         public void UpdateTask(TaskObject task)
         {
-            throw new NotImplementedException();
+            TaskDAO.Instance.UpdateTask(task);
         }
     }
 }
