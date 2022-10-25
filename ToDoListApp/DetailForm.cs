@@ -128,34 +128,34 @@ namespace Group9_Project
             result += "/";
             if (Mo.Checked)
             {
-                result += "Mo, ";
+                result += "Mo,";
             }
             if (Tu.Checked)
             {
-                result += "Tu, ";
+                result += "Tu,";
             }
             if (We.Checked)
             {
-                result += "We, ";
+                result += "We,";
             }
             if (Th.Checked)
             {
-                result += "Th, ";
+                result += "Th,";
             }
             if (Fr.Checked)
             {
-                result += "Fr, ";
+                result += "Fr,";
             }
             if (Sa.Checked)
             {
-                result += "Sa, ";
+                result += "Sa,";
             }
             if (Su.Checked)
             {
-                result += "Su, ";
+                result += "Su,";
             }
 
-            return result.Substring(0, result.Length - 2);
+            return result.Substring(0, result.Length - 1);
         }
         private void getRepeatTime(string repeat)
         {
