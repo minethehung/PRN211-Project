@@ -14,6 +14,7 @@ namespace Group9_Project
         }
         private ITaskRepository taskRepository = new TaskRepository();
         private IUserRepository userRepository = new UserRepository();
+        private ITaskGroupRepository taskGroupRepository = new TaskGroupRepository();
         private BindingSource source = null;
         public UserObject User { get; set; }
 
@@ -24,9 +25,17 @@ namespace Group9_Project
             {
                 pictureBox1.ImageLocation = User.ImagePath;
             }
-            
             LoadData();
-         
+            List<TaskGroupObject> tasks = taskGroupRepository.GetTaskGroupListByUser(this.User.Username);
+            if (tasks.Count > 0) {
+                List<string> data = new List<string>();
+                data.Add("All");
+                foreach (TaskGroupObject taskGroupObject in tasks) {
+                    data.Add(taskGroupObject.Name);
+                }
+                cboGroup.DataSource = data;
+            }
+            
         }
 
       
@@ -44,6 +53,14 @@ namespace Group9_Project
                 btnDone.Text = "Done";
             }
             enableButton();
+            foreach (DataGridViewRow row in taskList.Rows) {
+                if (row.Cells[4].Value.ToString() == "Complete") {
+                    row.Cells[4].Style.ForeColor = Color.Green;
+                }
+                else {
+                    row.Cells[4].Style.ForeColor = Color.Tomato;
+                }
+            }
         }
         private void LoadData()
         {
@@ -82,9 +99,9 @@ namespace Group9_Project
             {
                 LoginUser = this.User,
             };
-            this.Hide();
+            
             frmCreate.ShowDialog();
-            this.Show();
+            
             LoadData();
 
         }
@@ -144,9 +161,9 @@ namespace Group9_Project
             {
                 UserObject user = User;
                 DetailForm frmDetail = new DetailForm { UUser = user, Id = int.Parse(taskList.SelectedCells[0].Value.ToString()) };
-                this.Hide();
+               
                 frmDetail.ShowDialog();
-                this.Show();       
+                
             }
             catch (Exception ex)
             {
@@ -268,9 +285,9 @@ namespace Group9_Project
         private void btnUpdateUser_Click(object sender, EventArgs e) {
             try {
                 frmUpdateUser frmUpdateUser = new frmUpdateUser(this.User);
-                this.Hide();
+               
                 frmUpdateUser.ShowDialog();
-                this.Show();
+                
                 this.User = userRepository.GetUser(this.User.Username);
                 labelUsername.Text = User.FullName;
                 if (User.ImagePath != null) {
@@ -293,6 +310,45 @@ namespace Group9_Project
                 catch (Exception ex) {
                     MessageBox.Show(ex.Message, "Delete task", MessageBoxButtons.OK);
                 }
+            }
+        }
+
+        private void cboGroup_SelectedIndexChanged(object sender, EventArgs e) {
+            try {
+                string groupText = cboGroup.SelectedItem.ToString();
+                //System.Diagnostics.Debug.WriteLine(groupText);
+                if (groupText.Equals("All")) {
+                    LoadData();
+                    return;
+                }
+              
+                List<TaskObject> tasks = taskRepository.GetAllTaskOfUser(this.User.Username);
+                List<dynamic> data = new List<dynamic>();
+                foreach (TaskObject task in tasks) {
+                    //System.Diagnostics.Debug.WriteLine(task.StartDate.Date.ToString());
+                    // System.Diagnostics.Debug.WriteLine(DateTime.Now.Date.ToString());
+                    if (taskGroupRepository.GetTaskGroupId(User.Username, groupText) == task.GroupId) {
+                        data.Add(new {
+                            TaskId = task.TaskId,
+                            Title = task.Title,
+                            DueDate = task.DueDate,
+                            Importance = task.CategoryId,
+                            Status = task.State
+                        });
+                    }
+                }
+                if (data.Count > 0) {
+                    source = null;
+                    source = new BindingSource();
+                    source.DataSource = data;
+                    SetDataSource(source);
+                }
+                else {
+                    MessageBox.Show("No task match your search value", "Search task", MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Show important task", MessageBoxButtons.OK);
             }
         }
     }
