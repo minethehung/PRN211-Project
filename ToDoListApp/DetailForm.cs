@@ -71,7 +71,6 @@ namespace Group9_Project
                     //Code save Here
                     TaskObject obj = getTask();
                     repository.UpdateTask(obj);
-                    this.Detail_Load(sender, e);
                     this.Close();
                 }
                 if (res == DialogResult.Cancel)
@@ -367,7 +366,7 @@ namespace Group9_Project
             string username = UUser.Username;
             int taskId = Id;
             string category = comboCategory.Text;
-            int taskCate = 0;
+            int taskCate = 1;
 
             if (category == "Critical")
             {
@@ -381,7 +380,7 @@ namespace Group9_Project
             {
                 taskCate = 3;
             }
-            if (category == "Critical")
+            if (category == "Low")
             {
                 taskCate = 4;
             }
