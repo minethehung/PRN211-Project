@@ -203,7 +203,7 @@
             // cboGroup
             // 
             this.cboGroup.FormattingEnabled = true;
-            this.cboGroup.Location = new System.Drawing.Point(21, 55);
+            this.cboGroup.Location = new System.Drawing.Point(21, 87);
             this.cboGroup.Name = "cboGroup";
             this.cboGroup.Size = new System.Drawing.Size(202, 28);
             this.cboGroup.TabIndex = 53;
@@ -222,7 +222,7 @@
             // 
             // btbSearch
             // 
-            this.btbSearch.Location = new System.Drawing.Point(141, 9);
+            this.btbSearch.Location = new System.Drawing.Point(141, 41);
             this.btbSearch.Name = "btbSearch";
             this.btbSearch.Size = new System.Drawing.Size(82, 34);
             this.btbSearch.TabIndex = 51;
@@ -232,14 +232,14 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(21, 13);
+            this.txtSearch.Location = new System.Drawing.Point(21, 45);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(114, 27);
             this.txtSearch.TabIndex = 50;
             // 
             // btnAllTask
             // 
-            this.btnAllTask.Location = new System.Drawing.Point(21, 89);
+            this.btnAllTask.Location = new System.Drawing.Point(21, 123);
             this.btnAllTask.Name = "btnAllTask";
             this.btnAllTask.Size = new System.Drawing.Size(202, 34);
             this.btnAllTask.TabIndex = 49;
@@ -259,7 +259,8 @@
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(21, 128);
+            this.btnDone.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDone.Location = new System.Drawing.Point(21, 0);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(202, 34);
             this.btnDone.TabIndex = 45;
@@ -275,6 +276,7 @@
             this.btnImportant.TabIndex = 44;
             this.btnImportant.Text = "Important";
             this.btnImportant.UseVisualStyleBackColor = true;
+            this.btnImportant.Click += new System.EventHandler(this.btnImportant_Click_1);
             // 
             // btnView
             // 

@@ -76,7 +76,7 @@ namespace Group9_Project
                         TaskId = task.TaskId,
                         Title = task.Title,
                         DueDate = task.DueDate,
-                        Importance = task.CategoryId,
+                        Importance = MyAppConstants.category[task.CategoryId - 1],
                         Status = task.State
                     });
                 }
@@ -136,7 +136,7 @@ namespace Group9_Project
                             TaskId = task.TaskId,
                             Title = task.Title,
                             DueDate = task.DueDate,
-                            Importance = task.CategoryId,
+                            Importance = MyAppConstants.category[task.CategoryId - 1],
                             Status = task.State
                         });
                     }
@@ -222,7 +222,7 @@ namespace Group9_Project
                             TaskId = task.TaskId,
                             Title = task.Title,
                             DueDate = task.DueDate,
-                            Importance = task.CategoryId,
+                            Importance = MyAppConstants.category[task.CategoryId - 1],
                             Status = task.State
                         });
                     }
@@ -262,7 +262,7 @@ namespace Group9_Project
                             TaskId = task.TaskId,
                             Title = task.Title,
                             DueDate = task.DueDate,
-                            Importance = task.CategoryId,
+                            Importance = MyAppConstants.category[task.CategoryId - 1],
                             Status = task.State
                         });
                     }
@@ -332,7 +332,7 @@ namespace Group9_Project
                             TaskId = task.TaskId,
                             Title = task.Title,
                             DueDate = task.DueDate,
-                            Importance = task.CategoryId,
+                            Importance = MyAppConstants.category[task.CategoryId - 1],
                             Status = task.State
                         });
                     }
@@ -345,6 +345,39 @@ namespace Group9_Project
                 }
                 else {
                     MessageBox.Show("No task match your search value", "Search task", MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Show important task", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnImportant_Click_1(object sender, EventArgs e) {
+            try {
+
+                List<TaskObject> tasks = taskRepository.GetAllTaskOfUser(this.User.Username);
+                List<dynamic> data = new List<dynamic>();
+                foreach (TaskObject task in tasks) {
+                    //System.Diagnostics.Debug.WriteLine(task.StartDate.Date.ToString());
+                    // System.Diagnostics.Debug.WriteLine(DateTime.Now.Date.ToString());
+                    if (task.CategoryId <= 2) {
+                        data.Add(new {
+                            TaskId = task.TaskId,
+                            Title = task.Title,
+                            DueDate = task.DueDate,
+                            Importance = MyAppConstants.category[task.CategoryId - 1],
+                            Status = task.State
+                        });
+                    }
+                }
+                if (data.Count > 0) {
+                    source = null;
+                    source = new BindingSource();
+                    source.DataSource = data;
+                    SetDataSource(source);
+                }
+                else {
+                    MessageBox.Show("You have no importance task", "Search task", MessageBoxButtons.OK);
                 }
             }
             catch (Exception ex) {
