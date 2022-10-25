@@ -103,6 +103,15 @@ namespace Group9_Project
             frmCreate.ShowDialog();
             
             LoadData();
+            List<TaskGroupObject> tasks = taskGroupRepository.GetTaskGroupListByUser(this.User.Username);
+            if (tasks.Count > 0) {
+                List<string> data = new List<string>();
+                data.Add("All");
+                foreach (TaskGroupObject taskGroupObject in tasks) {
+                    data.Add(taskGroupObject.Name);
+                }
+                cboGroup.DataSource = data;
+            }
 
         }
 
@@ -163,7 +172,16 @@ namespace Group9_Project
                 DetailForm frmDetail = new DetailForm { UUser = user, Id = int.Parse(taskList.SelectedCells[0].Value.ToString()) };
                
                 frmDetail.ShowDialog();
-                
+                LoadData();
+                List<TaskGroupObject> tasks = taskGroupRepository.GetTaskGroupListByUser(this.User.Username);
+                if (tasks.Count > 0) {
+                    List<string> data = new List<string>();
+                    data.Add("All");
+                    foreach (TaskGroupObject taskGroupObject in tasks) {
+                        data.Add(taskGroupObject.Name);
+                    }
+                    cboGroup.DataSource = data;
+                }
             }
             catch (Exception ex)
             {
