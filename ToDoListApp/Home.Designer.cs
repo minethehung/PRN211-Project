@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.taskList = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUpdateUser = new System.Windows.Forms.Button();
@@ -90,19 +89,6 @@
             this.taskList.Size = new System.Drawing.Size(482, 440);
             this.taskList.TabIndex = 38;
             this.taskList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.taskList_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(-99, 546);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1145, 82);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Have a nice day :>>>";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -310,7 +296,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.taskList);
-            this.Controls.Add(this.label1);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
@@ -327,7 +312,6 @@
 
         #endregion
         private DataGridView taskList;
-        private Label label1;
         private Label label2;
         private Panel panel1;
         private PictureBox pictureBox1;
